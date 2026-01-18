@@ -1,0 +1,27 @@
+body{
+  margin:0;
+  padding:3rem;
+}
+img{
+  display:block;
+  width:100%;
+  height:auto;
+  background:#f2f2f2;
+}
+.bento {
+  display:grid;
+  grid-auto-flow:dense;
+  grid-template-columns:repeat(auto-fill, minmax(8rem, .5fr));
+  gap:1rem;
+
+  >*{
+    height:100%;
+    object-fit:cover;
+       content-visibility: auto;
+  contain-intrinsic-size: 8rem;
+    &[width="400"]{
+      grid-column:span 2;
+      contain-intrinsic-width:16rem;
+    }
+  }
+}

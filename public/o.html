@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Carousel + Chat</title>
+  <link rel="stylesheet" href="o.css">
+</head>
+<body>
+
+<div class="carousel-container">
+  <div class="carousel" id="carousel">
+
+    <!-- ================= EDWARD ================= -->
+    <div class="card" data-title="Edward Teacher" data-teacher="edward">
+      <img src="8707.PNG" alt="Edward" onerror="this.src='https://picsum.photos/300/400?1'">
+
+      <div class="card-right-panel">
+
+        <div class="info-view">
+          <h4 class="info-title">Edward 先生</h4>
+          <ul class="info-list">
+            <li>プログラミング (C, Python)</li>
+            <li>ゲーム制作 (Unity)</li>
+            <li>DX・自動化ツール</li>
+          </ul>
+          <button class="open-chat-btn">先生に質問 💬</button>
+        </div>
+
+        <div class="chat-view">
+          <div class="chat-header">
+            <button class="back-to-info-btn">⬅ 戻る</button>
+            <span>チャット</span>
+          </div>
+
+          <div class="messages">
+            <div class="msg ai">
+              こんにちは！授業について何でも聞いてください。
+            </div>
+          </div>
+
+          <div class="input-area">
+            <input type="text" placeholder="質問を入力..." />
+            <button class="send-btn">送信</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= TANIGUCHI ================= -->
+    <div class="card" data-title="谷口 直也" data-teacher="taniguchi">
+      <img src="783.png" alt="谷口 直也" onerror="this.src='https://picsum.photos/300/400?3'">
+
+      <div class="card-right-panel">
+
+        <div class="info-view">
+          <h4 class="info-title">谷口 直也 先生</h4>
+          <ul class="info-list">
+            <li>制作全般</li>
+            <li>Webクリエイター概論</li>
+            <li>最新AIと活用事例</li>
+            <li>就職指導</li>
+          </ul>
+          <button class="open-chat-btn">先生に質問 💬</button>
+        </div>
+
+        <div class="chat-view">
+          <div class="chat-header">
+            <button class="back-to-info-btn">⬅ 戻る</button>
+            <span>チャット</span>
+          </div>
+
+          <div class="messages">
+            <div class="msg ai">
+              こんにちは。授業や進路の相談も歓迎です。
+            </div>
+          </div>
+
+          <div class="input-area">
+            <input type="text" placeholder="質問を入力..." />
+            <button class="send-btn">送信</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= DUMMY CARDS ================= -->
+    <div class="card" data-title="Hulk">
+      <img src="547.png" onerror="this.src='https://picsum.photos/300/400?4'">
+    </div>
+
+    <div class="card" data-title="Iron Man">
+      <img src="" onerror="this.src='https://picsum.photos/300/400?5'">
+    </div>
+
+    <div class="card" data-title="Spiderman">
+      <img src="" onerror="this.src='https://picsum.photos/300/400?6'">
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <button class="btn" id="prevBtn">❮</button>
+  <button class="btn" id="nextBtn">❯</button>
+</div>
+
+<script src="o.js"></script>
+</body>
+</html>
