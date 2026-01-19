@@ -1,78 +1,197 @@
-<html lang="ja"><head>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ホームページ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&amp;display=swap" rel="stylesheet">
+  <title>島根デザイン専門学校</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="style1.css">
-  <img src="logo.png" alt="ロゴ">
+  <link rel="icon" href="logo.png">
 </head>
 <body>
-  <img src="kiss-emoji-kiss.gif" id="nyanCursor">
+
+  <img src="kiss-emoji-kiss.gif" id="nyanCursor" alt="cursor">
+
   <header class="header">
     <div class="logo">
-      
+       <span style="color:white; font-weight:bold; font-size:1.2rem;">SIDC</span>
     </div>
     <nav class="nav-menu">
-  <ul>
-    <li><a href="About.html" data-lang-ja="私たちについて" data-lang-en="About Us">私たちについて</a></li>
-    <li><a href="school.html" data-lang-ja="学校について" data-lang-en="school">学校について</a></li>
-    <li><a href="photo.html" data-lang-ja="学生たちの写真" data-lang-en="photo">写真</a></li>
-    <li><a href="o.html" data-lang-ja="3D" data-lang-en="photos">3D</a></li>
-    <li><a href="messej.html" data-lang-ja="Messej" data-lang-en="photos">Messej</a></li>
-  </ul>
-</nav>
+      <ul>
+        <li><a href="About.html">私たちについて</a></li>
+        <li><a href="school.html">学校について</a></li>
+        <li><a href="#courses">学科紹介</a></li>
+        <li><a href="photo.html">写真</a></li>
+        <li><a href="o.html">3D</a></li>
+      </ul>
+    </nav>
     <div class="header-right">
       <div class="lang-switch">
-        <button class="lang-btn active" data-lang="ja">日本語</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-    </div>
-
+        <button class="lang-btn active">JP</button>
+        <button class="lang-btn">EN</button>
+      </div>
       <button class="hamburger" aria-label="メニュー">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <section class="hero-banner">
     <div class="hero-grid">
-      <img src="neeltiin-uil-ajillagaa.jpg" alt="イメージ1">
-      <img src="aylal.jpg" alt="イメージ2">
-      <img src="img3.JPG" alt="イメージ3">
+      <img src="neeltiin-uil-ajillagaa.jpg" alt="Img1">
+      <img src="aylal.jpg" alt="Img2">
+      <img src="img3.JPG" alt="Img3">
     </div>
     <div class="hero-text-overlay">
       <h1>みんなで、明るい未来へ</h1>
       <p>夢を叶えるために、みんなで頑張ろう。</p>
     </div>
   </section>
-  <section class="image-gallery">
-    <img src="main_bg.jpg" alt="作品1">
-  </section>
-  <section class="bottom-section">
-  <div class="bottom-content">
-    <h2>私たちについて</h2>
-    <h3>それぞれの夢と目標に向かって歩み始めます、<br>共に過ごした時間を胸に、明るい未来を創りましょう。<p></p>
-    <p>日本発で世界中のファンを熱狂させる、我々の挑戦を紹介します。<br>未来へ向かって一歩踏み出そう</p>
-    <a href="About.html" class="btn-primary">詳細を見る</a>
-  </h3></div>
-</section>
-<section class="school-section">
-  <div class="school-image">
-    <img src="school1.jpg" alt="学校の写真">
-  </div>
-  <div class="school-info">
-    <h2>島根デザイン専門学校</h2>
-    <p>
-      島根デザイン専門学校は、最先端のIT技術とデザインを学べる専門学校です。<br>
-      実践的な授業とチーム開発で社会に通用するスキルを身につけます。
-    </p>
-    <a href="school.html" class="btn-details" target="_blank" rel="noopener noreferrer">詳細を見る</a>
-  </div>
-</section>
-<script src="script.js"></script>
-<footer>
-    <p>© 2025 Shimane Design School </p>
-</footer>
 
-</body></html>
+  <div class="new-news-ticker">
+      <div class="ticker-badge">NEWS</div>
+      <div class="ticker-content">
+          <span>2026.01.20 オープンキャンパス受付中！</span>
+          <span style="margin-left: 50px;">2025.12.15 学生作品展が大盛況でした。</span>
+          <span style="margin-left: 50px;">2025.11.01 AO入試エントリー開始</span>
+      </div>
+  </div>
+
+  <section class="school-section" style="margin-top: 50px; margin-bottom: 50px;">
+    <div class="school-image">
+      <img src="school1.jpg" alt="学校の写真">
+    </div>
+    <div class="school-info">
+      <h2>島根デザイン専門学校</h2>
+      <p>
+        島根デザイン専門学校は、最先端のIT技術とデザインを学べる専門学校です。<br>
+        実践的な授業とチーム開発で社会に通用するスキルを身につけます。
+      </p>
+      <a href="school.html" class="btn-details">詳細を見る</a>
+    </div>
+  </section>
+
+  <section id="courses" class="new-section-padding">
+      <div class="new-container">
+          <div class="new-section-title">
+              <h2>学科紹介</h2>
+          </div>
+          <div class="new-grid-3">
+              <div class="new-card">
+                  <h3>ITエンジニア学科</h3>
+                  <p>プログラミング、AI、ゲーム、アニメーション、アプリ開発を基礎から学びます。</p>
+              </div>
+              <div class="new-card">
+                  <h3>Webデザイン学科</h3>
+                  <p>UI/UX、グラフィックデザイン、Webサイト制作を習得。</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="image-gallery">
+      <div class="new-container">
+        <h2 style="text-align:center; color:#7ec8f2; margin-bottom:20px;">入学写真</h2>
+        <img src="main_bg.jpg" alt="作品1">
+      </div>
+  </section>
+
+  <section class="new-section-padding new-bg-darker">
+      <div class="new-container">
+          <div class="new-section-title">
+              <h2>入学までの流れ</h2>
+          </div>
+          <div class="new-timeline">
+              <div class="timeline-row">
+                  <div class="timeline-num">01</div>
+                  <div class="timeline-body">
+                      <h3>オープンキャンパス (Open Campus)</h3>
+                      <p>学校を見学し、先輩や先生と話してみましょう。</p>
+                  </div>
+              </div>
+              <div class="timeline-row">
+                  <div class="timeline-num">02</div>
+                  <div class="timeline-body">
+                      <h3>出願 (Entry)</h3>
+                      <p>Webまたは郵送で願書を提出してください。</p>
+                  </div>
+              </div>
+              <div class="timeline-row">
+                  <div class="timeline-num">03</div>
+                  <div class="timeline-body">
+                      <h3>面接 (Interview)</h3>
+                      <p>あなたの意欲を確認します。筆記試験はありません。</p>
+                  </div>
+              </div>
+              <div class="timeline-row">
+                  <div class="timeline-num">04</div>
+                  <div class="timeline-body">
+                      <h3>入学 (Admission)</h3>
+                      <p>合格通知を受け取り、夢への第一歩を踏み出します。</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="bottom-section">
+    <div class="bottom-content">
+      <h2>私たちについて</h2>
+      <h3>それぞれの夢と目標に向かって歩み始めます</h3>
+      <p>日本発で世界中のファンを熱狂させる、我々の挑戦を紹介します。<br>未来へ向かって一歩踏み出そう</p>
+      <a href="About.html" class="btn-primary">詳細を見る</a>
+    </div>
+  </section>
+
+  <section class="new-section-padding new-bg-darker">
+      <div class="new-container" style="max-width: 800px;">
+          <div class="new-section-title">
+              <h2>よくある質問</h2>
+          </div>
+          <details class="new-faq">
+              <summary>初心者でも大丈夫ですか？</summary>
+              <div class="faq-text">はい！入学者の70%が未経験スタートです。</div>
+          </details>
+          <details class="new-faq">
+              <summary>寮はありますか？</summary>
+              <div class="faq-text">はい、学校提携の学生寮とアパート紹介があります。</div>
+          </details>
+          <details class="new-faq">
+              <summary>学費のサポートは？</summary>
+              <div class="faq-text">奨学金制度や特待生制度が充実しています。</div>
+          </details>
+      </div>
+  </section>
+
+  <section id="access" class="new-section-padding">
+      <div class="new-container">
+          <div class="new-section-title">
+              <h2>学校の住所</h2>
+          </div>
+          <div style="text-align:center;">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3248.8!2d133.0!3d35.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDI4JzE0LjYiTiAxMzPCsDAzJzQ2LjIiRQ!5e0!3m2!1sja!2sjp!4v1600000000000!5m2!1sja!2sjp" width="100%" height="400" style="border:0; max-width:800px; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+             <p style="margin-top:10px; color:#aaa;">〒690-0001 島根県松江市東朝日町76-15</p>
+          </div>
+      </div>
+  </section>
+
+  <script src="script.js"></script>
+
+  <footer>
+    <p>© 2025 Shimane Design School </p>
+  </footer>
+
+  <script>
+
+    const nyan = document.getElementById("nyanCursor");
+    document.addEventListener("mousemove", e => {
+      nyan.style.left = e.clientX + "px";
+      nyan.style.top = e.clientY + "px";
+    });
+  </script>
+</body>
+</html>

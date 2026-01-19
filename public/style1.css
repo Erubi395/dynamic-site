@@ -1,9 +1,18 @@
+
 body {
   cursor: none;
   margin: 0;
   font-family: "Noto Serif JP", serif;
   background-color: #1E1E1E;
   color: #E0E0E0;
+}
+
+#nyanCursor {
+  width: 40px;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
 }
 
 .hero-banner {
@@ -20,8 +29,8 @@ body {
 
 .hero-grid img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 400px; 
+  object-fit: cover;
   background-color: #121212;
   display: block;
 }
@@ -42,15 +51,6 @@ body {
   margin: 0;
 }
 
-
-#nyanCursor {
-  width: 40px;
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
-
 .header {
   display: flex;
   align-items: center;
@@ -63,9 +63,7 @@ body {
   z-index: 1000;
 }
 
-.logo img {
-  height: 36px;
-}
+.logo img { height: 36px; }
 
 .nav-menu ul {
   list-style: none;
@@ -95,23 +93,6 @@ body {
   gap: 0.75rem;
 }
 
-.btn.shop-btn {
-  background: #5A8DEE;
-  color: white;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  border: 2px solid #4B7CD9;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.3s ease;
-}
-
-.btn.shop-btn:hover {
-  background: #3E6DCB;
-  border-color: #2F57A3;
-}
-
 .lang-switch {
   display: flex;
   border-radius: 20px;
@@ -121,7 +102,7 @@ body {
 .lang-btn {
   background: white;
   border: none;
-  color: #5A8DEE;
+  color: #4f555f;
   font-weight: 700;
   padding: 0.4rem 0.9rem;
   cursor: pointer;
@@ -130,9 +111,8 @@ body {
   margin-right: 0.5rem;
 }
 
-.lang-btn.active,
-.lang-btn:hover {
-  background: #5A8DEE;
+.lang-btn.active, .lang-btn:hover {
+  background: #43474f;
   color: white;
 }
 
@@ -163,22 +143,17 @@ body {
 
 .image-gallery img {
   width: 100%;
-  height: 500px;
+  max-width: 1000px;
+  height: auto;
   object-fit: cover;
   display: block;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-#top_about {
-  padding: 120px 0;
-  font-weight: 500;
-  position: relative;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .bottom-section {
-  background: url('iphy.gif') center center;
+  background: url('iphy.gif') center center; 
   color: #eee;
   padding: 80px 20px;
   text-align: center;
@@ -246,15 +221,6 @@ footer {
   margin-top: 50px;
 }
 
-@media (max-width: 768px) {
-  .nav-menu ul {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
-  }
-}
-
 .school-section {
   display: flex;
   align-items: center;
@@ -265,6 +231,7 @@ footer {
   margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  max-width: 1000px;
 }
 
 .school-image img {
@@ -275,21 +242,9 @@ footer {
   box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
-.school-info {
-  flex: 1;
-}
-
-.school-info h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-.school-info p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
+.school-info { flex: 1; }
+.school-info h2 { font-size: 2rem; margin-bottom: 1rem; font-weight: bold; }
+.school-info p { font-size: 1.1rem; line-height: 1.5; margin-bottom: 1.5rem; }
 
 .btn-details {
   display: inline-block;
@@ -301,23 +256,167 @@ footer {
   border-radius: 30px;
   transition: background-color 0.3s ease;
 }
+.btn-details:hover { background-color: #009acd; }
 
-.btn-details:hover {
-  background-color: #009acd;
+@media (max-width: 768px) {
+  .nav-menu ul { display: none; }
+  .hamburger { display: flex; }
+  .school-section { flex-direction: column; text-align: center; }
+  .school-image img { width: 80%; max-width: 350px; }
+  .school-info { margin-top: 1.5rem; }
+  .hero-grid { grid-template-columns: 1fr; } 
 }
 
-@media screen and (max-width: 700px) {
-  .school-section {
-    flex-direction: column;
+/* --- ШИНЭЭР НЭМСЭН ЗАГВАРУУД (NEW CODE) --- */
+
+.new-section-padding { padding: 80px 20px; }
+.new-bg-darker { background-color: #151515; } /* Арай бараан дэвсгэр */
+.new-container { max-width: 1000px; margin: 0 auto; }
+
+.new-section-title { text-align: center; margin-bottom: 50px; }
+.new-section-title h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #a8b4ba;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.new-section-title p { color: #888; letter-spacing: 2px; }
+
+/* 1. News Ticker */
+.new-news-ticker {
+    background: #000;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+.ticker-badge {
+    background: #ff4757;
+    padding: 2px 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+.ticker-content {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+/* 2. Cards (Courses) */
+.new-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.new-card {
+    background: #252525;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    transition: transform 0.3s;
+}
+.new-card:hover {
+    transform: translateY(-5px);
+    border-color: #7ec8f2;
+}
+.new-card h3 { color: #7ec8f2; margin-top: 0; }
+
+/* 3. Timeline (Admission Flow) */
+.new-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.new-timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #333;
+}
+.timeline-row {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+}
+.timeline-num {
+    width: 50px;
+    height: 50px;
+    background: #7ec8f2;
+    color: #111;
+    border-radius: 50%;
     text-align: center;
-  }
+    line-height: 50px;
+    font-weight: bold;
+    flex-shrink: 0;
+    z-index: 2;
+    border: 4px solid #151515;
+}
+.timeline-body {
+    margin-left: 20px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    border: 1px solid #333;
+}
+.timeline-body h3 { margin-top: 0; color: #fff; }
 
-  .school-image img {
-    width: 80%;
-    max-width: 350px;
-  }
+/* 4. Partners */
+.new-partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+.partner-item {
+    background: #252525;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #777;
+    transition: 0.3s;
+}
+.partner-item:hover {
+    color: #7ec8f2;
+    border-color: #7ec8f2;
+    background: #333;
+}
 
-  .school-info {
-    margin-top: 1.5rem;
-  }
+/* 5. FAQ */
+.new-faq {
+    background: #252525;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+.new-faq summary {
+    padding: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    list-style: none;
+}
+.new-faq summary::after {
+    content: '+'; float: right; color: #7ec8f2; font-weight: bold;
+}
+.new-faq[open] summary::after { content: '-'; }
+.faq-text {
+    padding: 20px;
+    color: #ccc;
+    border-top: 1px solid #444;
 }
