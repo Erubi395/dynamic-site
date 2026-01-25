@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
@@ -12,8 +10,6 @@ body {
   background-color: #f9f9f9;
   overflow-x: hidden;
 }
-
-/* ===== HEADER ===== */
 .header {
   position: fixed;
   top: 0;
@@ -27,7 +23,6 @@ body {
   padding: 0 6%;
   z-index: 2000;
 }
-
 .nav-menu ul {
   display: flex;
   gap: 20px;
@@ -35,7 +30,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .nav-menu a {
   color: #fff;
   text-decoration: none;
@@ -43,12 +37,9 @@ body {
   font-weight: bold;
   transition: color 0.3s;
 }
-
 .nav-menu a:hover {
   color: #ffcc00;
 }
-
-/* ===== NEWS TICKER ===== */
 .new-news-ticker {
   position: fixed;
   top: 64px;
@@ -62,7 +53,6 @@ body {
   z-index: 1500;
   overflow: hidden;
 }
-
 .ticker-badge {
   background: #e60012;
   padding: 4px 10px;
@@ -72,18 +62,15 @@ body {
   border-radius: 4px;
   flex-shrink: 0;
 }
-
 .ticker-wrapper {
   overflow: hidden;
   flex: 1;
 }
-
 .ticker-track {
   display: inline-block;
   white-space: nowrap;
   animation: ticker-scroll 25s linear infinite;
 }
-
 .ticker-track a {
   color: #fff;
   text-decoration: none;
@@ -95,31 +82,25 @@ body {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-
-/* ===== MAIN CONTENT ===== */
 .main-content {
-  margin-top: 108px; /* Header(64px) + NewsBar(44px) */
+  margin-top: 108px;
   padding-bottom: 60px;
 }
-
 .page-title-section {
   background: linear-gradient(135deg, #1b2735 0%, #090a0f 100%);
   color: #fff;
   text-align: center;
   padding: 100px 20px;
 }
-
 .page-title-section h1 {
   font-size: 2.5rem;
   margin-bottom: 15px;
 }
-
 section {
   max-width: 900px;
   margin: 40px auto;
   padding: 40px 20px;
 }
-
 .title {
   text-align: center;
   border-bottom: 2px solid #222;
@@ -128,13 +109,10 @@ section {
   padding-bottom: 10px;
   font-size: 1.8rem;
 }
-
-/* Timeline Style */
 .timeline {
   list-style: none;
   padding: 0;
 }
-
 .timeline li {
   background: #fff;
   margin-bottom: 15px;
@@ -142,15 +120,12 @@ section {
   border-left: 5px solid #ffcc00;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
-
-/* Form Style */
 .form {
   background: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
 .form input, .form select {
   width: 100%;
   padding: 12px;
@@ -159,7 +134,6 @@ section {
   border-radius: 5px;
   box-sizing: border-box;
 }
-
 .submit-btn {
   width: 100%;
   background: #222;
@@ -171,24 +145,19 @@ section {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .submit-btn:hover {
   background: #ffcc00;
   color: #000;
 }
-
-/* ===== ANIMATION ===== */
 .fade {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .fade.show {
   opacity: 1;
   transform: translateY(0);
 }
-
 footer {
   background: #111;
   color: #777;

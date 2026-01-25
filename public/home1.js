@@ -1,7 +1,4 @@
-// 1. Plugins бүртгэх
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
-
-// 2. ScrollSmoother тохиргоо
 ScrollSmoother.create({
   wrapper: "#smooth-wrapper",
   content: "#smooth-content",
@@ -9,8 +6,6 @@ ScrollSmoother.create({
   effects: true,
   normalizeScroll: true
 });
-
-// 3. Zoom Effect Animation
 gsap.timeline({
     scrollTrigger: {
       trigger: ".zoom-container",
@@ -25,7 +20,6 @@ gsap.timeline({
   .to(".zoom-item[data-layer='1']", { opacity: 1, z: 400, ease: "power1.inOut" }, 0)
   .to(".heading", { opacity: 1, z: 50, ease: "power1.inOut" }, 0);
 
-// 4. Text Reveal Animation
 const revealElement = document.querySelector(".opacity-reveal");
 
 if (revealElement) {
@@ -38,7 +32,7 @@ if (revealElement) {
           trigger: ".section-stick",
           pin: true,
           start: "center center",
-          end: "+=1500", // Скролл хийх зай
+          end: "+=1500", 
           scrub: 1
         }
       })
@@ -48,23 +42,21 @@ if (revealElement) {
         ease: "none",
         stagger: 1
       })
-      .to({}, { duration: 10 }) // Түр зогсолт
+      .to({}, { duration: 10 }) 
       .to(".opacity-reveal", {
         opacity: "0",
         scale: 1.2,
         duration: 50
       });
 }
-
-// 5. Button Reveal (Товчлуурыг гаргаж ирэх)
 gsap.to(".home-btn", {
     scrollTrigger: {
-        trigger: ".bottom-navigation", // Товчлуурын div харагдах үед
-        start: "top 85%", // Дэлгэцийн доод хэсэгт орж ирэнгүүт
+        trigger: ".bottom-navigation", 
+        start: "top 85%", 
         toggleActions: "play none none reverse" 
     },
-    opacity: 1,      // Ил болгоно
-    y: 0,            // Дээшээ гүйж байрлалдаа очно
+    opacity: 1,      
+    y: 0,            
     duration: 1,
     ease: "power3.out"
 });

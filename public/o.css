@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Jura:wght@300;500&display=swap');
-
 :root {
   --carousel-depth: 400px;
   --card-width: 140px;
@@ -8,7 +7,6 @@
   --primary-color: #ffcc00;
   --news-red: #e95451;
 }
-
 body {
   background-color: var(--bg-dark);
   margin: 0;
@@ -18,8 +16,6 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-
-/* HEADER */
 .header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -32,13 +28,29 @@ body {
   z-index: 2000;
   border-bottom: 1px solid #222;
 }
-
-.logo a { color: #fff; font-weight: 700; text-decoration: none; font-size: 1.1rem; }
-.nav-menu ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-.nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 400; transition: 0.3s; }
-.nav-menu a:hover { color: var(--primary-color); }
-
-/* NEWS BAR (Зураг шиг дизайн) */
+.logo a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+.nav-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+}
+.nav-menu a
+{ color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+.nav-menu a:hover {
+  color: var(--primary-color); 
+}
 .news-bar {
   position: fixed;
   top: 64px; left: 0; right: 0;
@@ -50,21 +62,41 @@ body {
   z-index: 1500;
   border-bottom: 1px solid #111;
 }
-
 .news-label { 
   background: var(--news-red); 
-  color: #fff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 3px; 
-  margin: 0 10px 0 15px; z-index: 1600; position: relative;
-  box-shadow: 12px 0 15px #000; flex-shrink: 0;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 3px; 
+  margin: 0 10px 0 15px;
+  z-index: 1600;
+  position: relative;
+  box-shadow: 12px 0 15px #000;
+  flex-shrink: 0;
 }
-
-.news-wrapper { overflow: hidden; flex: 1; height: 100%; display: flex; align-items: center; background: #000; }
-.news-track { display: inline-block; white-space: nowrap; animation: news-scroll 35s linear infinite; }
-.news-track a { color: #fff; text-decoration: none; margin-right: 120px; font-size: 14px; font-weight: 300; letter-spacing: 0.04em; }
-
-@keyframes news-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-/* MAIN CONTENT */
+.news-wrapper {
+  overflow: hidden;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: #000; }
+.news-track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: news-scroll 35s linear infinite;
+}
+.news-track a { color: #fff;
+  text-decoration: none;
+  margin-right: 120px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+@keyframes news-scroll {
+  from { transform: translateX(0); } to { transform: translateX(-50%); }
+}
 .main-content {
   height: 100vh;
   display: flex;
@@ -72,11 +104,19 @@ body {
   align-items: center;
   perspective: 1200px;
 }
-
-.carousel-container { position: relative; width: 0; height: 0; transform-style: preserve-3d; }
-.carousel { position: absolute; top: 0; left: 0; transform-style: preserve-3d; transition: transform 0.5s ease-out; transform: rotateY(var(--rotate-y, 0deg)); }
-
-/* CARD BASE */
+.carousel-container {
+  position: relative;
+  width: 0; height: 0;
+  transform-style: preserve-3d;
+}
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out;
+  transform: rotateY(var(--rotate-y, 0deg));
+}
 .card {
   position: absolute;
   width: var(--card-width);
@@ -92,10 +132,12 @@ body {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-
-.card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-
-/* ACTIVE CARD (Зураг дээр дарахад томрох хэсэг) */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
 .card.active {
   width: 550px !important;
   height: 350px !important;
@@ -105,10 +147,10 @@ body {
   transform: rotateY(var(--angle)) translateZ(calc(var(--carousel-depth) + 100px)) !important;
   box-shadow: 0 0 50px rgba(0,0,0,0.9), 0 0 20px rgba(255,204,0,0.2);
 }
-
-.card.active img { width: 40%; height: 100%; }
-
-/* RIGHT PANEL (Мэдээллийн хэсэг) */
+.card.active img {
+  width: 40%;
+  height: 100%;
+}
 .card-right-panel {
   display: none;
   width: 60%;
@@ -117,16 +159,32 @@ body {
   background: #0f0f0f;
   color: #fff;
 }
-
-.card.active .card-right-panel { display: flex; }
-
-.info-view, .chat-view { display: flex; flex-direction: column; height: 100%; }
-
-.info-title { color: var(--primary-color); font-size: 1.4rem; margin: 0 0 15px 0; font-weight: 700; }
-.info-list { list-style: none; padding: 0; margin: 0 0 20px 0; }
-.info-list li { margin-bottom: 10px; font-size: 0.9rem; color: #ccc; border-left: 2px solid var(--primary-color); padding-left: 10px; }
-
-/* BUTTONS IN CARD */
+.card.active .card-right-panel {
+  display: flex;
+}
+.info-view, .chat-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.info-title {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+}
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.info-list li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+  border-left: 2px solid var(--primary-color);
+  padding-left: 10px;
+}
 .open-chat-btn, .back-to-info-btn, .send-btn {
   background: var(--primary-color);
   border: none;
@@ -137,23 +195,80 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .open-chat-btn:hover { background: #e6b800; }
-
-/* CHAT STYLES */
-.chat-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-.messages { flex: 1; overflow-y: auto; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; margin-bottom: 10px; display: flex; flex-direction: column; gap: 8px; }
-.msg { padding: 8px 12px; border-radius: 12px; font-size: 0.85rem; max-width: 85%; line-height: 1.4; }
-.msg.ai { background: #333; align-self: flex-start; }
-.msg.user { background: var(--primary-color); color: #000; align-self: flex-end; }
-.input-area { display: flex; gap: 8px; }
-.input-area input { flex: 1; background: #222; border: 1px solid #444; color: #fff; padding: 8px; border-radius: 4px; }
-
-/* CONTROLS (❮ ❯ товчлуурууд) */
-.controls { position: absolute; bottom: 8%; width: 100%; display: flex; justify-content: center; gap: 40px; z-index: 1800; }
-.btn {
-  background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); 
-  color: #fff; width: 60px; height: 60px; border-radius: 50%; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: 0.3s; backdrop-filter: blur(5px);
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
 }
-.btn:hover { background: var(--primary-color); color: #000; border-color: var(--primary-color); }
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.msg {
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  max-width: 85%;
+  line-height: 1.4;
+}
+.msg.ai {
+  background: #333;
+  align-self: flex-start;
+}
+.msg.user {
+  background: var(--primary-color);
+  color: #000;
+  align-self: flex-end;
+}
+.input-area {
+  display: flex;
+  gap: 8px;
+}
+.input-area input {
+  flex: 1;
+  background: #222;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+}
+.controls {
+  position: absolute;
+  bottom: 8%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 1800;
+}
+.btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: 0.3s;
+  backdrop-filter: blur(5px);
+}
+.btn:hover {
+  background: var(--primary-color);
+  color: #000;
+  border-color: var(--primary-color);
+}

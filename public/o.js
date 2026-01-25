@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentAngle = 0;
   let isHovered = false;
 
-  // Карт байрлуулах
   cards.forEach((card, i) => {
     card.style.setProperty('--angle', `${i * anglePerCard}deg`);
     
@@ -16,9 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.classList.toggle('active');
     });
   });
-
-  // Анимаци
-  function animate() {
+function animate() {
     const isAnyCardActive = document.querySelector('.card.active');
     if (!isHovered && !isAnyCardActive) {
       currentAngle -= 0.1;
@@ -27,12 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animate);
   }
   animate();
-
-  // Controls
   document.getElementById('nextBtn').addEventListener('click', () => { currentAngle -= anglePerCard; });
   document.getElementById('prevBtn').addEventListener('click', () => { currentAngle += anglePerCard; });
 
-  // Chat/Info шилжилт
   document.querySelectorAll('.open-chat-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.card');
@@ -40,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card.querySelector('.chat-view').style.display = 'flex';
     });
   });
-
   document.querySelectorAll('.back-to-info-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.card');

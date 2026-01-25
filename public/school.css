@@ -1,19 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Noto Sans JP", sans-serif;
 }
-
 body {
-  background-color: #000; /* Нүүр хуудас шиг хар дэвсгэр */
+  background-color: #000; 
   color: #fff;
   overflow-x: hidden;
 }
-
-/* ===== HEADER ===== */
 .header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -25,11 +21,17 @@ body {
   padding: 0 8%;
   z-index: 2000;
 }
-
-.nav-menu ul { display: flex; gap: 20px; list-style: none; }
-.nav-menu a { color: white; text-decoration: none; font-size: .9rem; font-weight: bold; }
-
-/* ===== NEWS TICKER ===== */
+.nav-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: bold;
+}
 .new-news-ticker {
   position: fixed;
   top: 64px;
@@ -42,7 +44,6 @@ body {
   border-bottom: 1px solid #222;
   overflow: hidden;
 }
-
 .ticker-badge {
   background: #e95451;
   color: #fff;
@@ -59,40 +60,33 @@ body {
   box-shadow: 10px 0 15px #000;
   flex-shrink: 0;
 }
-
 .ticker-track {
   display: flex;
   white-space: nowrap;
   animation: ticker-scroll 40s linear infinite;
 }
-
 .ticker-track a {
   color: #fff;
   text-decoration: none;
   font-size: 14px;
   padding: 0 60px;
 }
-
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-
-/* ===== CONTENT WRAPPER ===== */
 .content-wrapper {
-  padding-top: 140px; /* Header + News Bar зай */
+  padding-top: 140px;
   padding-bottom: 60px;
   max-width: 1000px;
   margin: 0 auto;
 }
-
 .about-school {
   padding: 2rem;
   background-color: #111;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
 }
-
 .school-image img {
   width: 100%;
   height: auto;
@@ -100,13 +94,11 @@ body {
   margin-bottom: 2rem;
   border: 1px solid #333;
 }
-
 .about-school h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #00bfff;
 }
-
 .about-school h3 {
   font-size: 1.5rem;
   margin-top: 2rem;
@@ -115,15 +107,12 @@ body {
   border-left: 4px solid #00bfff;
   padding-left: 15px;
 }
-
 .about-school p {
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 1.2rem;
   color: #ccc;
 }
-
-/* ===== FOOTER ===== */
 footer {
   background-color: #111;
   color: #777;
@@ -132,10 +121,15 @@ footer {
   border-top: 1px solid #222;
 }
 
-/* Fade animation */
-.fade { opacity: 0; transform: translateY(20px); transition: 1s all ease; }
-.fade.show { opacity: 1; transform: translateY(0); }
-
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s all ease;
+}
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 @media (max-width: 768px) {
   .header { padding: 0 5%; }
   .about-school h2 { font-size: 1.5rem; }

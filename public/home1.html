@@ -1,70 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perspective Zoom Effect</title>
-    <link rel="stylesheet" href="home1.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shimane IT Design College</title>
+  <link rel="stylesheet" href="home1.css">
 </head>
 <body>
-
-<div id="smooth-wrapper">
+  <div id="site-header"></div>
+  
+  <div id="smooth-wrapper">
     <div id="smooth-content">
-        
-        <main>
-            <div class="zoom-container">
-                <h1 class="heading">島根itデザインカレッジ<br />専門学校</h1>
-                
-                <div class="zoom-item" data-layer="2"><img src="1.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="2"><img src="2.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="1"><img src="3.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="2"><img src="4.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="3"><img src="5.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="1"><img src="6.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="3"><img src="7.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="3"><img src="8.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="1"><img src="9.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="3"><img src="10.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="2"><img src="11.jpg" alt=""></div>
-                <div class="zoom-item" data-layer="1"><img src="12.jpg" alt=""></div>
-            </div>
+      <main>
+        <section class="zoom-container">
+          <h1 class="heading">
+            島根ITデザインカレッジ<br>
+            専門学校
+          </h1>
+          <div class="zoom-item" data-layer="2"><img src="zurag/1.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="2"><img src="zurag/2.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="1"><img src="zurag/3.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="2"><img src="zurag/4.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="3"><img src="zurag/5.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="1"><img src="zurag/6.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="3"><img src="zurag/7.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="3"><img src="zurag/8.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="1"><img src="zurag/9.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="3"><img src="zurag/10.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="2"><img src="zurag/11.jpg" alt=""></div>
+          <div class="zoom-item" data-layer="1"><img src="zurag/12.jpg" alt=""></div>
+        </section>
 
-            <section class="section-stick">
-                <p class="opacity-reveal">かけがえのない日々を、ありがとう。ここで見つけた景色は一生の宝物。</p>
-            </section>
+        <section class="section-stick">
+          <p class="opacity-reveal">
+            かけがえのない日々を、ありがとう。<br>
+            ここで見つけた景色は一生の宝物。
+          </p>
+        </section>
 
-            <div class="bottom-navigation">
-                <a href="home.html" class="home-btn">ホーム</a> 
-            </div>
-        </main>
+        <section class="fade">
+          <h2 class="title">NEWS</h2>
+          <p>2026.01.20 オープンキャンパス受付中！</p>
+        </section>
 
-    </div> </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
-<script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+        <div class="bottom-navigation">
+          <a href="home.html" class="home-btn">ホームへ戻る</a>
+        </div>
 
-<script src="home1.js"></script>
-<body>
+      </main>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://assets.codepen.io/16327/ScrollSmoother.min.js"></script>
+  <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+  <script src="home1.js"></script>
+  <script src="script.js"></script>
 
-<!-- HEADER автоматаар ачаална -->
-<div id="site-header"></div>
-
-<section class="fade">
-  <h2 class="title">News ページ</h2>
-  <p>ここはニュースの詳細ページです。</p>
-</section>
-
-<script src="script.js"></script>
-
-<script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("site-header").innerHTML = data;
-    });
-</script>
-
-</body>
-
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("site-header").innerHTML = data;
+      });
+  </script>
 </body>
 </html>

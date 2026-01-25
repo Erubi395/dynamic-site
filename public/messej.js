@@ -5,7 +5,6 @@ function seededRandom(seed) {
   let x = Math.sin(seed++) * 10000;
   return x - Math.floor(x);
 }
-
 function wrapLetters(str, element, seed = 1) {
   const fonts = [
     'caveat',
@@ -16,11 +15,9 @@ function wrapLetters(str, element, seed = 1) {
     'reenie-beanie',
     'shadows-into-light'
   ];
-
   const blacklist = {
     l: ['cedarville-cursive', 'oooh-baby', 'nothing-you-could-do']
   };
-
   const lastUsed = {};
   element.innerHTML = '';
 
@@ -33,11 +30,9 @@ function wrapLetters(str, element, seed = 1) {
     if (blacklist[lowerChar]) {
       availableFonts = fonts.filter(f => !blacklist[lowerChar].includes(f));
     }
-
     if (lastUsed[lowerChar]) {
       availableFonts = availableFonts.filter(f => f !== lastUsed[lowerChar]);
     }
-
     const fontIndex = Math.floor(seededRandom(currentSeed) * availableFonts.length);
     const font = availableFonts[fontIndex] || fonts[0];
     lastUsed[lowerChar] = font;
@@ -50,6 +45,5 @@ function wrapLetters(str, element, seed = 1) {
     currentSeed++;
   }
 }
-
 const p = document.querySelector('p');
 wrapLetters(text, p, seed);

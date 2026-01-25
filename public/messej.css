@@ -1,11 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Cedarville+Cursive&family=Indie+Flower&family=Nothing+You+Could+Do&family=Oooh+Baby&family=Reenie+Beanie&family=Shadows+Into+Light&family=Klee+One&display=swap');
-
-/* --- GLOBAL --- */
 body {
   margin: 0;
   background-color: #ffffff;
 }
-
 div {
   padding: 0rem 5rem;
   margin: auto;
@@ -15,59 +12,45 @@ div {
   max-width: 900px;
   min-height: 100vh;
 }
-
-/* --- LETTER STYLE (MAIN) --- */
 p {
   font-family:
-    "Klee One",        /* Japanese handwritten */
-    "Caveat",          /* English handwritten */
+    "Klee One",        
+    "Caveat",          
     "Indie Flower",
     cursive;
 
   font-size: 4rem;
   color: rgb(200, 177, 51);
   line-height: 3.4rem;
-  letter-spacing: 0.05em;   /* захиа шиг */
+  letter-spacing: 0.05em;  
   font-weight: 400;
   font-style: normal;
-
-  /* optional – маш зөөлөн гараар бичсэн эффект */
   transform: rotate(-0.3deg);
 }
-
-/* --- RESPONSIVE --- */
 @media only screen and (max-width: 800px) {
   p {
     font-size: 3rem;
     line-height: 2.55rem;
   }
 }
-
-/* --- OPTIONAL FONT CLASSES (if you still want them) --- */
 .caveat {
   font-family: "Caveat", "Klee One", cursive;
 }
-
 .shadows-into-light {
   font-family: "Shadows Into Light", "Klee One", cursive;
 }
-
 .indie-flower {
   font-family: "Klee One", "Indie Flower", cursive;
 }
-
 .nothing-you-could-do {
   font-family: "Nothing You Could Do", "Klee One", cursive;
 }
-
 .oooh-baby {
   font-family: "Oooh Baby", "Klee One", cursive;
 }
-
 .reenie-beanie {
   font-family: "Reenie Beanie", "Klee One", cursive;
 }
-
 .cedarville-cursive {
   font-family: "Cedarville Cursive", "Klee One", cursive;
 }
