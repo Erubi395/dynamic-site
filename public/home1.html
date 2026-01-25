@@ -44,5 +44,27 @@
 <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
 
 <script src="home1.js"></script>
+<body>
+
+<!-- HEADER автоматаар ачаална -->
+<div id="site-header"></div>
+
+<section class="fade">
+  <h2 class="title">News ページ</h2>
+  <p>ここはニュースの詳細ページです。</p>
+</section>
+
+<script src="script.js"></script>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
+    });
+</script>
+
+</body>
+
 </body>
 </html>

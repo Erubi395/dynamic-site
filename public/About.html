@@ -1,53 +1,79 @@
-<html lang="ja"><head>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
   <meta charset="UTF-8">
-  <title>私たちについて</title>
+  <title>私たちについて | Shimane Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="About.css">
 </head>
 <body>
-  <section class="about-hero">
-    
-    <div class="content">
-      <h1>私たちについて</h1>
-      <p>それぞれの夢と目標に向かって歩み始めます。</p>
-      <p>共に過ごした時間を胸に、明るい未来を創りましょう。</p>
-      <p>日本発で世界中のファンを熱狂させる、我々の挑戦を紹介します。</p>
-      <p>未来へ向かって一歩踏み出そう。</p>
-      <a href="home.html" class="btn">ホームへ戻る</a>
+
+  <header class="header">
+    <div class="logo">
+      <a href="home.html" style="color:white; font-weight:bold; text-decoration:none;">Shimane Design</a>
     </div>
-    <p class="school-intro">
-            私たちは、島根デザイン専門学校でITの最先端技術を学ぶ学生です。<br>
-            HTML・CSS・JavaScriptから始まり、UI/UXデザイン、チーム開発、データ解析など幅広く挑戦しています。<br>
-            自分の強みを活かしながら、社会で活躍できるスキルを身につけるため、毎日努力を重ねています。<br>
-            この経験を通じて、自分自身の可能性を広げ、誰かの役に立つ仕事ができるようになることを目指しています。
-    </p>
-    </section>
-    <div class="slider-wrapper">
-        <div class="overlay"></div>
-        <ul class="wrap">
-            <li class="ss_img"><img src="1.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="2.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="3.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="4.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="5.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="6.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="7.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="8.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="9.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="10.jpg" alt="ABOUT" width="960" height="540"></li>
-            <li class="ss_img"><img src="11.jpg" alt="ABOUT" width="960" height="540"></li>
-    <li class="ss_img"><img src="12.jpg" alt="ABOUT" width="960" height="540"></li>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="About.html">私たちについて</a></li>
+        <li><a href="school.html">学校について</a></li>
+        <li><a href="o.html">3D</a></li>
+        <li><a href="#courses">学科紹介</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  </ul>
-</div>
-<p class="personal-message">
-  ここまで読んでいただき、ありがとうございます。<br>
-  このプロジェクトを通じて、少しでも皆さんの心に残る何かを届けられたら嬉しいです。<br>
-  これからも応援よろしくお願いします。<br>
-  エルフビルグーン
-</p>
-<footer>
-    <p>© 2025 Shimane Design School </p>
-</footer>
+  <div class="new-news-ticker">
+    <div class="ticker-badge">NEWS</div>
+    <div class="ticker-wrapper">
+      <div class="ticker-track">
+        <a href="#">2026.01.20 オープンキャンパス受付中！</a>
+        <a href="#">2025.12.15 学生作品展が大盛況でした。</a>
+        <a href="#">2025.11.01 AO入試エントリー開始</a>
+        <a href="#">2025.10.10 推薦入試 出願受付開始</a>
+        <a href="#">2026.01.20 オープンキャンパス受付中！</a>
+        <a href="#">2025.12.15 学生作品展が大盛況でした。</a>
+        <a href="#">2025.11.01 AO入試エントリー開始</a>
+        <a href="#">2025.10.10 推薦入試 出願受付開始</a>
+      </div>
+    </div>
+  </div>
 
+  <section class="memory-hero">
+    <div class="hero-text">
+      <h1>あの時間が、<br>今の私たちを作った。</h1>
+      <p>気づけば、笑って、悩んで、前に進んでいた。</p>
+      <button id="musicBtn">♪ 音楽を流す</button>
+    </div>
+  </section>
 
-</body></html>
+  <section class="memory-text fade">
+    <p>エラーで始まり、笑顔で終わる日々。<br>同じ画面を見つめて、同じことで悩んでいた。</p>
+    <p>「できた！」の一言が、<br>あの日の全部を救ってくれた。</p>
+  </section>
+
+  <section class="photo-flow">
+    <div class="flow-track">
+      <img src="1.jpg" alt="1"><img src="2.jpg" alt="2"><img src="3.jpg" alt="3">
+      <img src="4.jpg" alt="4"><img src="5.jpg" alt="5"><img src="6.jpg" alt="6">
+      <img src="1.jpg" alt="1"><img src="2.jpg" alt="2">
+    </div>
+  </section>
+
+  <section class="ending fade">
+    <p>特別な才能じゃない。<br>ただ、諦めなかっただけ。</p>
+    <span>— 島根デザイン専門学校 ITクラス</span>
+  </section>
+
+  <footer>
+    <p>© 2026 Shimane Design School</p>
+  </footer>
+
+  <audio id="bgm" loop>
+    <source src="audio/bgm.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="about.js"></script>
+</body>
+</html>

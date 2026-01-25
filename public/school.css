@@ -1,132 +1,143 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Noto Sans JP", sans-serif;
-  background-color: #000000;
-  color: #333;
 }
 
-header {
-  background-color: #111;
-  color: white;
-  padding: 20px;
-  text-align: center;
+body {
+  background-color: #000; /* Нүүр хуудас шиг хар дэвсгэр */
+  color: #fff;
+  overflow-x: hidden;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-nav ul {
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  background: #222;
   display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  z-index: 2000;
 }
 
-nav ul li {
-  margin: 0 15px;
+.nav-menu ul { display: flex; gap: 20px; list-style: none; }
+.nav-menu a { color: white; text-decoration: none; font-size: .9rem; font-weight: bold; }
+
+/* ===== NEWS TICKER ===== */
+.new-news-ticker {
+  position: fixed;
+  top: 64px;
+  left: 0; right: 0;
+  height: 50px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  z-index: 1500;
+  border-bottom: 1px solid #222;
+  overflow: hidden;
 }
 
-nav ul li a {
+.ticker-badge {
+  background: #e95451;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  height: 30px;
+  padding: 0 15px;
+  border-radius: 4px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  z-index: 1600;
+  position: relative;
+  box-shadow: 10px 0 15px #000;
+  flex-shrink: 0;
+}
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker-scroll 40s linear infinite;
+}
+
+.ticker-track a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 14px;
+  padding: 0 60px;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-main {
-  padding: 40px 20px;
-  max-width: 900px;
+/* ===== CONTENT WRAPPER ===== */
+.content-wrapper {
+  padding-top: 140px; /* Header + News Bar зай */
+  padding-bottom: 60px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-main.school h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-main.school h3 {
-  font-size: 22px;
-  margin-top: 30px;
-  color: #444;
-}
-
-main.school p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-footer {
-  background-color: #111;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-}
-
-@media screen and (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  main {
-    padding: 20px 10px;
-  }
-
-  main.school h2 {
-    font-size: 22px;
-  }
-
-  main.school h3 {
-    font-size: 18px;
-  }
-}
-
 .about-school {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-  color: #fff;
-  line-height: 1.7;
+  padding: 2rem;
   background-color: #111;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+}
+
+.school-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
 }
 
 .about-school h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
-  text-align: center;
   color: #00bfff;
 }
 
 .about-school h3 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: #00bfff;
-  border-bottom: 2px solid #00bfff;
-  padding-bottom: 0.3rem;
+  border-left: 4px solid #00bfff;
+  padding-left: 15px;
 }
 
 .about-school p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  color: #ccc;
 }
 
-.school-image img {
-  width: 900px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+/* ===== FOOTER ===== */
+footer {
+  background-color: #111;
+  color: #777;
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid #222;
+}
+
+/* Fade animation */
+.fade { opacity: 0; transform: translateY(20px); transition: 1s all ease; }
+.fade.show { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+  .header { padding: 0 5%; }
+  .about-school h2 { font-size: 1.5rem; }
+  .nav-menu a { font-size: 0.8rem; }
 }

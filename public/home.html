@@ -10,6 +10,8 @@
   
   <link rel="stylesheet" href="style1.css">
   <link rel="icon" href="logo.png">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -30,13 +32,22 @@
     </nav>
   </header>
 
-  <section class="hero-banner">
+<section class="hero-banner" id="top">
     <div class="hero-grid">
-      <img src="neeltiin-uil-ajillagaa.jpg" alt="Сургуулийн нээлт">
-      <img src="aylal.jpg" alt="Аялал">
-      <img src="img3.JPG" alt="Сургуулийн орчин">
+      <div class="hero-item side">
+        <img id="img-left" src="neeltiin-uil-ajillagaa.jpg" alt="Left Image" onclick="swapImage('img-left')">
+      </div>
+
+      <div class="hero-item center">
+        <img id="img-center" src="aylal.jpg" alt="Center Image">
+      </div>
+
+      <div class="hero-item side">
+        <img id="img-right" src="img3.JPG" alt="Right Image" onclick="swapImage('img-right')">
+      </div>
     </div>
-    <div class="hero-text-overlay">
+
+    <div class="hero-text-overlay" data-aos="fade-up" data-aos-delay="500">
       <h1>みんなで、明るい未来へ</h1>
       <p>夢を叶えるために、みんなで頑張ろう。</p>
     </div>
@@ -64,11 +75,12 @@
   </div>
 </div>
 
-  <section class="school-section">
-    <div class="school-image">
+<section class="school-section" id="school">
+
+    <div class="school-image" data-aos="fade-right">
       <img src="school1.jpg" alt="学校の写真">
     </div>
-    <div class="school-info">
+    <div class="school-info" data-aos="fade-left">
       <h2>島根デザイン専門学校</h2>
       <p>
         島根デザイン専門学校は、最先端のIT技術とデザインを学べる専門学校です。<br>
@@ -80,15 +92,15 @@
 
   <section id="courses" class="new-section-padding">
       <div class="new-container">
-          <div class="new-section-title">
+          <div class="new-section-title" data-aos="fade-up">
               <h2>学科紹介</h2>
           </div>
           <div class="new-grid-3">
-              <div class="new-card">
+              <div class="new-card" data-aos="fade-up">
                   <h3>ITエンジニア学科</h3>
                   <p>プログラミング、AI、ゲーム、アニメーション、アプリ開発を基礎から学びます。</p>
               </div>
-              <div class="new-card">
+              <div class="new-card" data-aos="fade-up" data-aos-delay="200">
                   <h3>Webデザイン学科</h3>
                   <p>UI/UX、グラフィックデザイン、Webサイト制作を習得。</p>
               </div>
@@ -96,8 +108,9 @@
       </div>
   </section>
 
-  <section class="image-gallery">
-      <div class="new-container">
+<section class="image-gallery" id="gallery">
+
+      <div class="new-container" data-aos="zoom-in">
         <h2 style="text-align:center; color:#7ec8f2; margin-bottom:20px;">入学写真</h2>
         <img src="main_bg.jpg" alt="Admission Photo">
       </div>
@@ -105,32 +118,32 @@
 
   <section class="new-section-padding new-bg-darker">
       <div class="new-container">
-          <div class="new-section-title">
+          <div class="new-section-title" data-aos="fade-up">
               <h2>入学までの流れ</h2>
           </div>
           <div class="new-timeline">
-              <div class="timeline-row">
+              <div class="timeline-row" data-aos="fade-up">
                   <div class="timeline-num">01</div>
                   <div class="timeline-body">
                       <h3>オープンキャンパス (Open Campus)</h3>
                       <p>学校を見学し、先輩や先生と話してみましょう。</p>
                   </div>
               </div>
-              <div class="timeline-row">
+              <div class="timeline-row" data-aos="fade-up">
                   <div class="timeline-num">02</div>
                   <div class="timeline-body">
                       <h3>出願 (Entry)</h3>
                       <p>Webまたは郵送で願書を提出してください。</p>
                   </div>
               </div>
-              <div class="timeline-row">
+              <div class="timeline-row" data-aos="fade-up">
                   <div class="timeline-num">03</div>
                   <div class="timeline-body">
                       <h3>面接 (Interview)</h3>
                       <p>あなたの意欲を確認します。筆記試験はありません。</p>
                   </div>
               </div>
-              <div class="timeline-row">
+              <div class="timeline-row" data-aos="fade-up">
                   <div class="timeline-num">04</div>
                   <div class="timeline-body">
                       <h3>入学 (Admission)</h3>
@@ -140,9 +153,8 @@
           </div>
       </div>
   </section>
-
-  <section class="bottom-section">
-    <div class="bottom-content">
+<section class="bottom-section" id="about">
+    <div class="bottom-content" data-aos="fade-up">
       <h2>私たちについて</h2>
       <h3>それぞれの夢と目標に向かって歩み始めます</h3>
       <p>日本発で世界中のファンを熱狂させる、我々の挑戦を紹介します。<br>未来へ向かって一歩踏み出そう</p>
@@ -151,7 +163,7 @@
   </section>
 
   <section class="new-section-padding new-bg-darker">
-      <div class="new-container" style="max-width: 800px;">
+      <div class="new-container" style="max-width: 800px;" data-aos="fade-up">
           <div class="new-section-title">
               <h2>よくある質問</h2>
           </div>
@@ -171,7 +183,7 @@
   </section>
 
   <section id="access" class="new-section-padding">
-      <div class="new-container">
+      <div class="new-container" data-aos="fade-up">
           <div class="new-section-title">
               <h2>学校の住所</h2>
           </div>
@@ -187,31 +199,30 @@
     <p>© 2025 Shimane Design School </p>
   </footer>
 
-  <script>
-    const nyan = document.getElementById("nyanCursor");
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    if (!isTouchDevice && nyan) {
-        nyan.style.display = "block";
-        document.body.style.cursor = "none"; 
+<script src="script.js"></script>
+<body>
 
-        document.addEventListener("mousemove", e => {
-          nyan.style.left = e.clientX + "px";
-          nyan.style.top = e.clientY + "px";
-        });
-        
-        const links = document.querySelectorAll('a, button, summary');
-        links.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                nyan.style.transform = "translate(-50%, -50%) scale(1.5)";
-            });
-            link.addEventListener('mouseleave', () => {
-                nyan.style.transform = "translate(-50%, -50%) scale(1)";
-            });
-        });
-    } else {
-        document.body.style.cursor = "auto";
-    }
-  </script>
+<!-- HEADER автоматаар ачаална -->
+<div id="site-header"></div>
+
+<section class="fade">
+  <h2 class="title">News ページ</h2>
+  <p>ここはニュースの詳細ページです。</p>
+</section>
+
+<script src="script.js"></script>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
+    });
+</script>
+
+</body>
+
 </body>
 </html>
