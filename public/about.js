@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (e) { console.error(e); }
   });
-
   const fades = document.querySelectorAll(".fade");
   const handleScroll = () => {
     fades.forEach(el => {
