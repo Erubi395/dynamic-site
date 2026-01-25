@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>島根デザイン専門学校</title>
+  <title>Shimane Design</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <link rel="stylesheet" href="style1.css">
   <link rel="icon" href="logo.png">
-  
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -19,66 +19,60 @@
 
   <header class="header">
     <div class="logo">
-       <span style="color:white; font-weight:bold; font-size:1.2rem;">Shimane Design</span>
+       <a href="#">Shimane Design</a>
     </div>
     <nav class="nav-menu">
       <ul>
+        <li><a href="home.html">Home</a></li>
         <li><a href="About.html">私たちについて</a></li>
         <li><a href="school.html">学校について</a></li>
-        <li><a href="#courses">学科紹介</a></li>
-        <li><a href="photo.html">写真</a></li>
         <li><a href="o.html">3D</a></li>
+        <li><a href="#courses">学科紹介</a></li>
+        <li><a href="#access">アクセス</a></li>
       </ul>
     </nav>
   </header>
 
-<section class="hero-banner" id="top">
+
+
+  <section class="hero-banner" id="top">
     <div class="hero-grid">
       <div class="hero-item side">
-        <img id="img-left" src="neeltiin-uil-ajillagaa.jpg" alt="Left Image" onclick="swapImage('img-left')">
+        <img id="img-left" src="neeltiin-uil-ajillagaa.jpg" alt="Left" onclick="swapImage('img-left')">
       </div>
-
       <div class="hero-item center">
-        <img id="img-center" src="aylal.jpg" alt="Center Image">
+        <img id="img-center" src="aylal.jpg" alt="Center">
       </div>
-
       <div class="hero-item side">
-        <img id="img-right" src="img3.JPG" alt="Right Image" onclick="swapImage('img-right')">
+        <img id="img-right" src="img3.JPG" alt="Right" onclick="swapImage('img-right')">
       </div>
     </div>
 
-    <div class="hero-text-overlay" data-aos="fade-up" data-aos-delay="500">
+    <div class="hero-text-overlay" data-aos="fade-up" data-aos-delay="300">
       <h1>みんなで、明るい未来へ</h1>
       <p>夢を叶えるために、みんなで頑張ろう。</p>
     </div>
   </section>
 
-<div class="new-news-ticker">
-  <div class="ticker-badge">NEWS</div>
-
-  <div class="ticker-wrapper">
-    <div class="ticker-track">
-      <a href="news1.html">2026.01.20 オープンキャンパス受付中！</a>
-      <a href="news2.html">2025.12.15 学生作品展が大盛況でした。</a>
-      <a href="news3.html">2025.11.01 AO入試エントリー開始</a>
-      <a href="news4.html">2025.10.10 推薦入試 出願受付開始</a>
-      <a href="news5.html">2025.09.25 留学生向け説明会 開催</a>
-      <a href="news6.html">2025.09.01 後期授業スタート</a>
-
-      <a href="news1.html">2026.01.20 オープンキャンパス受付中！</a>
-      <a href="news2.html">2025.12.15 学生作品展が大盛況でした。</a>
-      <a href="news3.html">2025.11.01 AO入試エントリー開始</a>
-      <a href="news4.html">2025.10.10 推薦入試 出願受付開始</a>
-      <a href="news5.html">2025.09.25 留学生向け説明会 開催</a>
-      <a href="news6.html">2025.09.01 後期授業スタート</a>
+    <div class="new-news-ticker">
+    <div class="ticker-badge">NEWS</div>
+    <div class="ticker-wrapper">
+      <div class="ticker-track">
+        <a href="news1.html">2026.01.20 オープンキャンパス受付中！</a>
+        <a href="news2.html">2025.12.15 学生作品展が大盛況でした。</a>
+        <a href="news3.html">2025.11.01 AO入試エントリー開始</a>
+        <a href="news4.html">2025.10.10 推薦入試 出願受付開始</a>
+        <a href="news5.html">2025.09.25 留学生向け説明会 開催</a>
+        <a href="news6.html">2025.09.01 後期授業スタート</a>
+        <a href="news1.html">2026.01.20 オープンキャンパス受付中！</a>
+        <a href="news2.html">2025.12.15 学生作品展が大盛況でした。</a>
+      </div>
     </div>
   </div>
-</div>
 
-<section class="school-section" id="school">
-
+  <section class="school-section" id="school">
     <div class="school-image" data-aos="fade-right">
-      <img src="school1.jpg" alt="学校の写真">
+      <img src="school1.jpg" alt="School Photo">
     </div>
     <div class="school-info" data-aos="fade-left">
       <h2>島根デザイン専門学校</h2>
@@ -108,8 +102,7 @@
       </div>
   </section>
 
-<section class="image-gallery" id="gallery">
-
+  <section class="image-gallery" id="gallery">
       <div class="new-container" data-aos="zoom-in">
         <h2 style="text-align:center; color:#7ec8f2; margin-bottom:20px;">入学写真</h2>
         <img src="main_bg.jpg" alt="Admission Photo">
@@ -125,41 +118,33 @@
               <div class="timeline-row" data-aos="fade-up">
                   <div class="timeline-num">01</div>
                   <div class="timeline-body">
-                      <h3>オープンキャンパス (Open Campus)</h3>
+                      <h3>オープンキャンパス</h3>
                       <p>学校を見学し、先輩や先生と話してみましょう。</p>
                   </div>
               </div>
               <div class="timeline-row" data-aos="fade-up">
                   <div class="timeline-num">02</div>
                   <div class="timeline-body">
-                      <h3>出願 (Entry)</h3>
+                      <h3>出願</h3>
                       <p>Webまたは郵送で願書を提出してください。</p>
                   </div>
               </div>
               <div class="timeline-row" data-aos="fade-up">
                   <div class="timeline-num">03</div>
                   <div class="timeline-body">
-                      <h3>面接 (Interview)</h3>
+                      <h3>面接</h3>
                       <p>あなたの意欲を確認します。筆記試験はありません。</p>
                   </div>
               </div>
               <div class="timeline-row" data-aos="fade-up">
                   <div class="timeline-num">04</div>
                   <div class="timeline-body">
-                      <h3>入学 (Admission)</h3>
+                      <h3>入学</h3>
                       <p>合格通知を受け取り、夢への第一歩を踏み出します。</p>
                   </div>
               </div>
           </div>
       </div>
-  </section>
-<section class="bottom-section" id="about">
-    <div class="bottom-content" data-aos="fade-up">
-      <h2>私たちについて</h2>
-      <h3>それぞれの夢と目標に向かって歩み始めます</h3>
-      <p>日本発で世界中のファンを熱狂させる、我々の挑戦を紹介します。<br>未来へ向かって一歩踏み出そう</p>
-      <a href="About.html" class="btn-primary">詳細を見る</a>
-    </div>
   </section>
 
   <section class="new-section-padding new-bg-darker">
@@ -175,20 +160,16 @@
               <summary>寮はありますか？</summary>
               <div class="faq-text">はい、学校提携の学生寮とアパート紹介があります。</div>
           </details>
-          <details class="new-faq">
-              <summary>学費のサポートは？</summary>
-              <div class="faq-text">奨学金制度や特待生制度が充実しています。</div>
-          </details>
       </div>
   </section>
 
   <section id="access" class="new-section-padding">
       <div class="new-container" data-aos="fade-up">
           <div class="new-section-title">
-              <h2>学校の住所</h2>
+              <h2>アクセス</h2>
           </div>
           <div style="text-align:center;">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d208.5!2d133.0!3d35.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDI4JzE0LjQiTiAxMzPCsDAzJzQ2LjgiRQ!5e0!3m2!1sen!2sjp!4v1600000000000!5m2!1sen!2sjp" 
+             <iframe src="https://maps.google.com/maps?q=Shimane&t=&z=13&ie=UTF8&iwloc=&output=embed" 
                      width="100%" height="400" style="border:0; max-width:800px; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
              <p style="margin-top:10px; color:#aaa;">〒690-0001 島根県松江市東朝日町76-15</p>
           </div>
@@ -199,30 +180,7 @@
     <p>© 2025 Shimane Design School </p>
   </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script src="script.js"></script>
-<body>
-
-<!-- HEADER автоматаар ачаална -->
-<div id="site-header"></div>
-
-<section class="fade">
-  <h2 class="title">News ページ</h2>
-  <p>ここはニュースの詳細ページです。</p>
-</section>
-
-<script src="script.js"></script>
-
-<script>
-  fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("site-header").innerHTML = data;
-    });
-</script>
-
-</body>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
