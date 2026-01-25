@@ -139,7 +139,6 @@ a, button {
 .hero-item.side img:hover {
   filter: brightness(0.8);
 }
-
 .hero-text-overlay {
   position: absolute;
   bottom: 0;
@@ -157,8 +156,7 @@ a, button {
 }
 .hero-text-overlay p {
   font-size: 1.2rem;
-  color: #ddd;
-}
+  color: #ddd;}
 .school-section {
   max-width: 1000px;
   margin: 60px auto;
