@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.unobserve(entry.target);
       }
     });
+    const links = document.querySelectorAll(".ticker-track a");
+    links.forEach(link => {
+        if (link.href.includes("news1.html")) {
+            link.style.color = "#ff5a5a";
+            link.style.fontWeight = "bold";
+        }
+    });
   }, observerOptions);
   fades.forEach(f => {
     observer.observe(f);
