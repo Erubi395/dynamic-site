@@ -28,6 +28,10 @@ app.get("/school", (req, res) => {
   res.render("pages/school", { title: "School Page" });
 });
 
+app.get("/3d", (req, res) => {
+  res.render("pages/3d", { title: "3d Page" });
+});
+
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");
 });
