@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+body {
+  background: #fafafa;
+  color: #222;
+  overflow-x: hidden;
+  padding-top: 116px; 
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  z-index: 2000;
+}
+.logo a {
+  color: white; 
+  font-weight: bold; 
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.nav-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.new-news-ticker {
+  position: fixed;
+  top: 64px; 
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  overflow: hidden;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  z-index: 1500;
+}
+.ticker-badge {
+  height: 30px;
+  padding: 0 15px;
+  margin-left: 10px;
+  background: #e95451;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 10px 0 15px #000;
+}
+.ticker-wrapper {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker-scroll 45s linear infinite;
+}
+.ticker-track a {
+  display: flex;
+  align-items: center;
+  padding: 0 70px;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 768px) {
+  .header { padding: 0 4%; }
+  .nav-menu ul { gap: 10px; }
+  .nav-menu a { font-size: 0.75rem; }
+  .ticker-badge { width: 70px; font-size: 10px; }
+  .ticker-track a { padding: 0 30px; font-size: 13px; }
+}
