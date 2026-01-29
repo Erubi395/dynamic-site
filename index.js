@@ -29,7 +29,14 @@ app.get("/school", (req, res) => {
 });
 
 app.get("/3d", (req, res) => {
-  res.render("pages/3d", { title: "3d Page" });
+  res.render("pages/3d", { title: "3D Page" });
+});
+app.get("/career", (req, res) => {
+  res.render("pages/career", { title: "Career Page" });
+});
+
+app.get("/news1", (req, res) => {
+  res.render("pages/news1", { title: "News Page" });
 });
 
 app.listen(3000, () => {
