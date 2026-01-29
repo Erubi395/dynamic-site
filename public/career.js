@@ -48,7 +48,6 @@ const careerData = {
         salary: "平均年収: 400万円 〜 850万円"
     }
 };
-
 function openModal(jobType) {
     const modal = document.getElementById("careerModal");
     const data = careerData[jobType];
@@ -71,12 +70,10 @@ function openModal(jobType) {
     modal.style.display = "block";
     document.body.style.overflow = "hidden";
 }
-
 function closeModal() {
     document.getElementById("careerModal").style.display = "none";
     document.body.style.overflow = "auto";
 }
-
 window.onclick = function(event) {
     const modal = document.getElementById("careerModal");
     if (event.target == modal) {
