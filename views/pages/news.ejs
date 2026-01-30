@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/common.css" />
+<link rel="stylesheet" href="/news.css" />
+<div class="new-news-ticker">
+  <div class="ticker-badge">NEWS</div>
+  <div class="ticker-wrapper">
+    <div class="ticker-track">
+      <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
+      <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
+      <a href="/news3">2025.11.01 AO入試エントリー開始</a>
+      <a href="/news4">2025.10.10 推薦入試 出願受付開始</a>
+      <a href="/news5">2025.09.25 留学生向け説明会 開催</a>
+      <a href="/news6">2025.09.01 後期授業スタート</a>
+      <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
+      <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
+    </div>
+  </div>
+</div>
+
+<main class="main-content">
+  <section class="page-title-section">
+    <h1><%= title %></h1>
+    <p><%= description %></p>
+  </section>
+
+  <section class="fade" id="about">
+    <h2 class="title">オープンキャンパスとは</h2>
+    <div class="content-box">
+      <p>
+        島根デザイン専門学校の教育内容や、実際の授業の雰囲気を体験できる特別な一日です。在校生や先生と直接話せるチャンスもあります。
+      </p>
+    </div>
+  </section>
+
+  <section class="fade" id="courses">
+    <h2 class="title">当日のスケジュール</h2>
+    <ul class="timeline">
+      <li><strong>10:00</strong> 受付開始</li>
+      <li><strong>10:30</strong> 学校説明会</li>
+      <li><strong>11:30</strong> 体験授業（デザイン・Web・IT）</li>
+      <li><strong>13:00</strong> キャンパスツアー・ランチ体験</li>
+      <li><strong>15:00</strong> 個別相談・終了</li>
+    </ul>
+  </section>
+
+  <section class="fade" id="entry">
+    <h2 class="title">参加申し込み</h2>
+    <form class="form">
+      <input type="text" placeholder="お名前" required />
+      <input type="email" placeholder="メールアドレス" required />
+      <select required>
+        <option value="">希望学科を選択</option>
+        <option value="it">IT・Web学科</option>
+        <option value="design">デザイン学科</option>
+      </select>
+      <button type="submit" class="submit-btn">この内容で申し込む</button>
+    </form>
+  </section>
+
+  <section id="access" class="fade" style="text-align: center">
+    <h2 class="title">アクセス</h2>
+    <p>〒690-0001 島根県松江市東朝日町76-15</p>
+  </section>
+</main>
+<script src="/news.js"></script>

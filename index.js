@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
+const news = require("./lib/news");
 
 const app = express();
 
@@ -41,6 +42,20 @@ app.get("/news1", (req, res) => {
 
 app.get("/news2", (req, res) => {
   res.render("pages/news2", { title: "News2 Page" });
+});
+
+app.get("/news/:id", (req, res) => {
+  const newsId = parseInt(req.params.id);
+  const newsItem = news.find((item) => item.id === newsId);
+
+  if (!newsItem) {
+    return res.status(404).send("News not found");
+  }
+
+  res.render("pages/news", {
+    title: newsItem.title,
+    description: newsItem.description,
+  });
 });
 
 app.listen(3000, () => {
