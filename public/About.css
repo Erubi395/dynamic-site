@@ -34,67 +34,9 @@ body {
   font-size: 0.9rem;
   font-weight: bold;
 }
-.new-news-ticker {
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  height: 52px;
-  background: #000;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  overflow: hidden;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-  z-index: 1500;
-}
-.ticker-badge {
-  height: 30px;
-  padding: 0 15px;
-  margin-left: 10px;
-  background: #e95451;
-  color: #fff;
-  font-size: 13px;
-  font-weight: bold;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 10px 0 15px #000;
-}
-.ticker-wrapper {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-.ticker-track {
-  display: flex;
-  white-space: nowrap;
-  animation: ticker-scroll 45s linear infinite;
-}
-.ticker-track a {
-  display: flex;
-  align-items: center;
-  padding: 0 70px;
-  font-size: 15px;
-  color: #fff;
-  text-decoration: none;
-}
-@keyframes ticker-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 .memory-hero {
   height: 100vh;
-  padding-top: 116px;
+  padding-top: 116px; 
   background: url("zurag/iphy.gif") center / cover no-repeat;
   position: relative;
   display: flex;
@@ -142,7 +84,6 @@ body {
   display: flex;
   animation: flow 40s linear infinite;
 }
-
 .flow-track img {
   height: 280px;
   margin-right: 25px;
@@ -184,13 +125,5 @@ footer {
   }
   .nav-menu a {
     font-size: 0.75rem;
-  }
-  .ticker-badge {
-    width: 70px;
-    font-size: 10px;
-  }
-  .ticker-track a {
-    padding: 0 30px;
-    font-size: 13px;
   }
 }
