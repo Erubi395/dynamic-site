@@ -195,3 +195,33 @@
     .gallery { grid-template-columns: repeat(2, 1fr); }
     .article-header h1 { font-size: 24px; }
 }
+.timeline {
+    list-style: none;
+    padding-left: 30px;
+    border-left: 3px solid #ddd; 
+    margin-left: 10px;
+}
+.timeline li {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background: #e95451; 
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1px #e95451;
+}
+.timeline span {
+    font-weight: bold;
+    color: #e95451;
+    margin-right: 15px;
+    display: inline-block;
+    width: 50px; 
+}
