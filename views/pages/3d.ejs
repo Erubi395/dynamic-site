@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="common.css">
 <link rel="stylesheet" href="o.css">
+
 <div class="news-bar">
   <div class="news-label">NEWS</div>
   <div class="news-wrapper">
@@ -10,8 +11,6 @@
       <a href="news4.html">2025.10.10 推薦入試 出願受付開始</a>
       <a href="news5.html">2025.09.25 留学生向け説明会 開催</a>
       <a href="news6.html">2025.09.01 後期授業スタート</a>
-      <a href="news1.html">2026.01.20 オープンキャンパス受付中！</a>
-      <a href="news2.html">2025.12.15 学生作品展が大盛況でした。</a>
     </div>
   </div>
 </div>
@@ -19,33 +18,71 @@
 <main class="main-content">
   <div class="carousel-container">
     <div class="carousel" id="carousel">
+      
       <div class="card" data-title="Edward Teacher">
         <img src="zurag/8707.PNG" alt="Edward">
+        
         <div class="card-right-panel">
-          <h4 class="info-title">Edward 先生</h4>
-          <ul class="info-list">
-            <li>プログラミング (C, Python)</li>
-            <li>ゲーム制作 (Unity)</li>
-            <li>DX・自動化ツール</li>
-          </ul>
+          <div class="info-view">
+            <h4 class="info-title">Edward 先生</h4>
+            <ul class="info-list">
+              <li>プログラミング (C, Python)</li>
+              <li>ゲーム制作 (Unity)</li>
+              <li>DX・自動化ツール</li>
+            </ul>
+            <button class="open-chat-btn">先生とチャットする</button>
+          </div>
+
+          <div class="chat-view" style="display: none;">
+            <div class="chat-header">
+              <span class="info-title" style="margin:0; font-size:1rem;">Edward AI</span>
+              <button class="back-to-info-btn" style="padding: 5px 10px; font-size: 0.8rem;">戻る</button>
+            </div>
+            <div class="messages">
+              <div class="msg ai">こんにちは！プログラミングについて何か質問はありますか？</div>
+            </div>
+            <div class="input-area">
+              <input type="text" placeholder="質問を入力...">
+              <button class="send-btn">Go</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="card" data-title="谷口 直也">
         <img src="zurag/783.png" alt="谷口 直也">
+        
         <div class="card-right-panel">
-          <h4 class="info-title">谷口 直也 先生</h4>
-          <ul class="info-list">
-            <li>制作全般</li>
-            <li>Webクリエイター概論</li>
-            <li>最新AIと活用事例</li>
-          </ul>
+          <div class="info-view">
+            <h4 class="info-title">谷口 直也 先生</h4>
+            <ul class="info-list">
+              <li>制作全般</li>
+              <li>Webクリエイター概論</li>
+              <li>最新AIと活用事例</li>
+            </ul>
+            <button class="open-chat-btn">先生とチャットする</button>
+          </div>
+
+          <div class="chat-view" style="display: none;">
+            <div class="chat-header">
+              <span class="info-title" style="margin:0; font-size:1rem;">Taniguchi AI</span>
+              <button class="back-to-info-btn" style="padding: 5px 10px; font-size: 0.8rem;">戻る</button>
+            </div>
+            <div class="messages">
+              <div class="msg ai">WebデザインやAI活用についてお答えします。</div>
+            </div>
+            <div class="input-area">
+              <input type="text" placeholder="質問を入力...">
+              <button class="send-btn">Go</button>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="card" data-title="Card 3"><img src="zurag/547.png"></div>
       <div class="card" data-title="Card 4"><img src="zurag/4.jpg"></div>
       <div class="card" data-title="Card 5"><img src="zurag/5.jpg"></div>
+
     </div>
   </div>
   
