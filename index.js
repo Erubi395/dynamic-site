@@ -35,8 +35,8 @@ app.get("/career", (req, res) => {
   res.render("pages/career", { title: "Career Page" });
 });
 
-app.get("/news", (req, res) => {
-  res.render("pages/news", { title: "News Page" });
+app.get("/news1", (req, res) => {
+  res.render("pages/news1", { title: "News1 Page" });
 });
 
 
