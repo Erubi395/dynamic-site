@@ -199,3 +199,12 @@
     .gallery { grid-template-columns: repeat(2, 1fr); }
     .article-header h1 { font-size: 24px; }
 }
+@media (max-width: 900px) {
+    .gallery { grid-template-columns: repeat(3, 1fr); }
+    .article-header h1 { font-size: 30px; }
+    .art-grid { grid-template-columns: repeat(3, 1fr); } 
+}
+@media (max-width: 768px) {
+    .art-grid { grid-template-columns: repeat(2, 1fr); }
+    .page-header-v2 h1 { font-size: 28px; }
+}

@@ -44,6 +44,11 @@ app.get("/news2", (req, res) => {
   res.render("pages/news2", { title: "News2 Page" });
 });
 
+app.get("/news3", (req, res) => {
+  res.render("pages/news3", { title: "News3 Page" });
+});
+
+
 app.get("/news/:id", (req, res) => {
   const newsId = parseInt(req.params.id);
   const newsItem = news.find((item) => item.id === newsId);
