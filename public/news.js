@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     const links = document.querySelectorAll(".ticker-track a");
     links.forEach(link => {
-        if (link.href.includes("news1.html")) {
+        if (link.href.includes("/news1")) {
             link.style.color = "#ff5a5a";
             link.style.fontWeight = "bold";
         }

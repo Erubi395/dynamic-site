@@ -42,6 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.style.opacity = "1";
         bigImg.style.transform = "scale(1)";
       });
+    const links = document.querySelectorAll(".ticker-track a");
+    links.forEach(link => {
+        if (link.href.includes("/news2")) {
+            link.style.color = "#ff5a5a";
+            link.style.fontWeight = "bold";
+        }
+    });
       const closeOverlay = () => {
         overlay.style.opacity = "0";
         bigImg.style.transform = "scale(0.9)";

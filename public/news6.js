@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const links = document.querySelectorAll(".news-items a");
     links.forEach(link => {
-        if (link.href.includes("news6.html")) {
+        if (link.href.includes("/news6")) {
             link.style.color = "#ff5a5a";
             link.style.fontWeight = "bold";
         }

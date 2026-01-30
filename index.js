@@ -48,6 +48,17 @@ app.get("/news3", (req, res) => {
   res.render("pages/news3", { title: "News3 Page" });
 });
 
+app.get("/news4", (req, res) => {
+  res.render("pages/news4", { title: "News4 Page" });
+});
+
+app.get("/news5", (req, res) => {
+  res.render("pages/news5", { title: "News5 Page" });
+});
+
+app.get("/news6", (req, res) => {
+  res.render("pages/news6", { title: "News6 Page" });
+});
 
 app.get("/news/:id", (req, res) => {
   const newsId = parseInt(req.params.id);
