@@ -1,3 +1,68 @@
+/* --- ЭНИЙГ o.css ФАЙЛ ДОТОР ХУУЛНА --- */
+
+/* 1. Мэдээний үндсэн мөр (Хар дэвсгэр) */
+.news-bar {
+  position: fixed;
+  top: 64px;          /* Header-ийн өндрөөс хамаарч тааруулна */
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: #000 !important; /* Хар өнгө (чухал) */
+  height: 50px;
+  overflow: hidden;
+  z-index: 1500;
+  border-bottom: 1px solid #333;
+}
+
+/* 2. "NEWS" гэсэн улаан шошго */
+.news-label { 
+  background-color: #e95451; 
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 3px; 
+  margin: 0 10px 0 15px;
+  z-index: 1600;
+  flex-shrink: 0; /* Шахагдахгүй байх */
+  box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+/* 3. Мэдээ урсах зам */
+.news-wrapper {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Илүү гарсан хэсгийг нуух */
+}
+
+.news-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Мөр таслахгүй */
+  animation: news-scroll 30s linear infinite; /* Урсах хөдөлгөөн */
+}
+
+/* 4. Мэдээний линкүүд (Цагаан өнгөтэй болгох) */
+.news-track a { 
+  color: #fff !important; /* Цагаан өнгө */
+  text-decoration: none;
+  margin-right: 50px;     /* Мэдээ хоорондын зай */
+  font-size: 14px;
+}
+
+/* 5. Хөдөлгөөн (Animation) */
+@keyframes news-scroll {
+  0% { transform: translateX(0); } 
+  100% { transform: translateX(-100%); }
+}
+
+/* 6. Үндсэн хэсгийг доошлуулах (Мэдээний мөрөнд дарагдахгүйн тулд) */
+.main-content {
+  padding-top: 120px !important; /* Дээрээс зай авах */
+}
 :root {
   --carousel-depth: 400px;
   --card-width: 140px;
