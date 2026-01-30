@@ -39,6 +39,9 @@ app.get("/news1", (req, res) => {
   res.render("pages/news1", { title: "News1 Page" });
 });
 
+app.get("/news2", (req, res) => {
+  res.render("pages/news2", { title: "News2 Page" });
+});
 
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");
