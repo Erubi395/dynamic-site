@@ -1,101 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Jura:wght@300;500&display=swap');
 :root {
   --carousel-depth: 400px;
   --card-width: 140px;
   --card-height: 200px;
   --bg-dark: #18181b;
   --primary-color: #ffcc00;
-  --news-red: #e95451;
-}
-body {
-  background-color: var(--bg-dark);
-  margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 300;
-  color: #fff;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-.header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 64px;
-  padding: 0 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #1a1a1a;
-  z-index: 2000;
-  border-bottom: 1px solid #222;
-}
-.logo a {
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-.nav-menu ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0; 
-}
-.nav-menu a
-{ color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 400;
-  transition: 0.3s;
-}
-.nav-menu a:hover {
-  color: var(--primary-color); 
-}
-.news-bar {
-  position: fixed;
-  top: 64px; left: 0; right: 0;
-  display: flex;
-  align-items: center;
-  background: #000;
-  height: 46px;
-  overflow: hidden;
-  z-index: 1500;
-  border-bottom: 1px solid #111;
-}
-.news-label { 
-  background: var(--news-red); 
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 3px; 
-  margin: 0 10px 0 15px;
-  z-index: 1600;
-  position: relative;
-  box-shadow: 12px 0 15px #000;
-  flex-shrink: 0;
-}
-.news-wrapper {
-  overflow: hidden;
-  flex: 1;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  background: #000; }
-.news-track {
-  display: inline-block;
-  white-space: nowrap;
-  animation: news-scroll 35s linear infinite;
-}
-.news-track a { color: #fff;
-  text-decoration: none;
-  margin-right: 120px;
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-}
-@keyframes news-scroll {
-  from { transform: translateX(0); } to { transform: translateX(-50%); }
 }
 .main-content {
   height: 100vh;
@@ -103,6 +11,8 @@ body {
   justify-content: center;
   align-items: center;
   perspective: 1200px;
+  background-color: var(--bg-dark);
+  overflow: hidden; 
 }
 .carousel-container {
   position: relative;
@@ -195,7 +105,9 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-.open-chat-btn:hover { background: #e6b800; }
+.open-chat-btn:hover {
+  background: #e6b800;
+}
 .chat-header {
   display: flex;
   align-items: center;
