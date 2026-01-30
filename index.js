@@ -55,6 +55,7 @@ app.get("/news/:id", (req, res) => {
   res.render("pages/news", {
     title: newsItem.title,
     description: newsItem.description,
+    newsList: news,
   });
 });
 
