@@ -1,67 +1,73 @@
-/* --- ЭНИЙГ o.css ФАЙЛ ДОТОР ХУУЛНА --- */
+/* --- ШИНЭ БҮТЭЦТЭЙ TICKER --- */
 
-/* 1. Мэдээний үндсэн мөр (Хар дэвсгэр) */
-.news-bar {
+/* 1. Үндсэн хар хайрцаг */
+.new-news-ticker {
   position: fixed;
-  top: 64px;          /* Header-ийн өндрөөс хамаарч тааруулна */
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  background-color: #000 !important; /* Хар өнгө (чухал) */
+  top: 64px;           /* Header-ийн өндөр */
+  left: 0; right: 0;
   height: 50px;
-  overflow: hidden;
+  background-color: #000;
+  display: flex;       /* Badge болон Wrapper-ийг зэрэгцүүлэх */
+  align-items: center;
   z-index: 1500;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #222;
 }
 
-/* 2. "NEWS" гэсэн улаан шошго */
-.news-label { 
-  background-color: #e95451; 
+/* 2. NEWS тэмдэг (Хөдөлгөөнгүй байна) */
+.ticker-badge {
+  background-color: #e95451;
   color: #fff;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 3px; 
-  margin: 0 10px 0 15px;
+  height: 30px;
+  padding: 0 15px;
+  border-radius: 4px;
+  margin: 0 15px;      /* 2 талдаа зайтай */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1600;
-  flex-shrink: 0; /* Шахагдахгүй байх */
+  flex-shrink: 0;      /* Жижигрэхгүй */
   box-shadow: 2px 0 10px rgba(0,0,0,0.5);
 }
 
-/* 3. Мэдээ урсах зам */
-.news-wrapper {
-  flex: 1;
+/* 3. ШИНЭ: Мэдээ урсах хэсгийг хязгаарлагч */
+.ticker-wrapper {
+  flex-grow: 1;        /* Үлдсэн зайг бүгдийг эзэлнэ */
+  overflow: hidden;    /* Илүү гарсан текстийг нууна */
   height: 100%;
   display: flex;
   align-items: center;
-  overflow: hidden; /* Илүү гарсан хэсгийг нуух */
+  position: relative;
 }
 
-.news-track {
+/* 4. Урсдаг зам */
+.ticker-track {
   display: flex;
-  align-items: center;
-  white-space: nowrap; /* Мөр таслахгүй */
-  animation: news-scroll 30s linear infinite; /* Урсах хөдөлгөөн */
+  white-space: nowrap;
+  /* Хурдыг тохируулах бол 40s-ийг багасгаж эсвэл ихэсгэнэ */
+  animation: ticker-scroll 40s linear infinite; 
 }
 
-/* 4. Мэдээний линкүүд (Цагаан өнгөтэй болгох) */
-.news-track a { 
-  color: #fff !important; /* Цагаан өнгө */
+/* 5. Линкүүд */
+.ticker-track a {
+  color: #fff;
   text-decoration: none;
-  margin-right: 50px;     /* Мэдээ хоорондын зай */
   font-size: 14px;
+  margin-right: 60px;
+  display: inline-block;
 }
 
-/* 5. Хөдөлгөөн (Animation) */
-@keyframes news-scroll {
-  0% { transform: translateX(0); } 
-  100% { transform: translateX(-100%); }
+/* 6. Хөдөлгөөн */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
 }
 
-/* 6. Үндсэн хэсгийг доошлуулах (Мэдээний мөрөнд дарагдахгүйн тулд) */
-.main-content {
-  padding-top: 120px !important; /* Дээрээс зай авах */
+/* Үндсэн контентыг доошлуулах */
+.main-content, .content-wrapper {
+  padding-top: 140px !important; 
+}
 }
 :root {
   --carousel-depth: 400px;
