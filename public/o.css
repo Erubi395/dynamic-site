@@ -1,19 +1,14 @@
-/* --- ШИНЭ БҮТЭЦТЭЙ TICKER --- */
-
-/* 1. Үндсэн хар хайрцаг */
 .new-news-ticker {
   position: fixed;
-  top: 64px;           /* Header-ийн өндөр */
+  top: 64px;          
   left: 0; right: 0;
   height: 50px;
   background-color: #000;
-  display: flex;       /* Badge болон Wrapper-ийг зэрэгцүүлэх */
+  display: flex;       
   align-items: center;
   z-index: 1500;
   border-bottom: 1px solid #222;
 }
-
-/* 2. NEWS тэмдэг (Хөдөлгөөнгүй байна) */
 .ticker-badge {
   background-color: #e95451;
   color: #fff;
@@ -22,34 +17,27 @@
   height: 30px;
   padding: 0 15px;
   border-radius: 4px;
-  margin: 0 15px;      /* 2 талдаа зайтай */
+  margin: 0 15px;    
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1600;
-  flex-shrink: 0;      /* Жижигрэхгүй */
+  flex-shrink: 0;     
   box-shadow: 2px 0 10px rgba(0,0,0,0.5);
 }
-
-/* 3. ШИНЭ: Мэдээ урсах хэсгийг хязгаарлагч */
 .ticker-wrapper {
-  flex-grow: 1;        /* Үлдсэн зайг бүгдийг эзэлнэ */
-  overflow: hidden;    /* Илүү гарсан текстийг нууна */
+  flex-grow: 1;      
+  overflow: hidden;    
   height: 100%;
   display: flex;
   align-items: center;
   position: relative;
 }
-
-/* 4. Урсдаг зам */
 .ticker-track {
   display: flex;
   white-space: nowrap;
-  /* Хурдыг тохируулах бол 40s-ийг багасгаж эсвэл ихэсгэнэ */
   animation: ticker-scroll 40s linear infinite; 
 }
-
-/* 5. Линкүүд */
 .ticker-track a {
   color: #fff;
   text-decoration: none;
@@ -57,17 +45,12 @@
   margin-right: 60px;
   display: inline-block;
 }
-
-/* 6. Хөдөлгөөн */
 @keyframes ticker-scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); } 
 }
-
-/* Үндсэн контентыг доошлуулах */
 .main-content, .content-wrapper {
   padding-top: 140px !important; 
-}
 }
 :root {
   --carousel-depth: 400px;
