@@ -1,82 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Noto Sans JP", sans-serif;
-}
 body {
   background-color: #000; 
   color: #fff;
   overflow-x: hidden;
 }
-.header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 64px;
-  background: #222;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8%;
-  z-index: 2000;
-}
-.nav-menu ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: .9rem;
-  font-weight: bold;
-}
-.new-news-ticker {
-  position: fixed;
-  top: 64px;
-  left: 0; right: 0;
-  height: 50px;
-  background: #000;
-  display: flex;
-  align-items: center;
-  z-index: 1500;
-  border-bottom: 1px solid #222;
-  overflow: hidden;
-}
-.ticker-badge {
-  background: #e95451;
-  color: #fff;
-  font-size: 13px;
-  font-weight: bold;
-  height: 30px;
-  padding: 0 15px;
-  border-radius: 4px;
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-  z-index: 1600;
-  position: relative;
-  box-shadow: 10px 0 15px #000;
-  flex-shrink: 0;
-}
-.ticker-track {
-  display: flex;
-  white-space: nowrap;
-  animation: ticker-scroll 40s linear infinite;
-}
-.ticker-track a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 0 60px;
-}
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
 .content-wrapper {
-  padding-top: 140px;
+  padding-top: 140px; 
   padding-bottom: 60px;
   max-width: 1000px;
   margin: 0 auto;
@@ -113,14 +41,6 @@ body {
   margin-bottom: 1.2rem;
   color: #ccc;
 }
-footer {
-  background-color: #111;
-  color: #777;
-  text-align: center;
-  padding: 40px;
-  border-top: 1px solid #222;
-}
-
 .fade {
   opacity: 0;
   transform: translateY(20px);
@@ -131,7 +51,5 @@ footer {
   transform: translateY(0);
 }
 @media (max-width: 768px) {
-  .header { padding: 0 5%; }
   .about-school h2 { font-size: 1.5rem; }
-  .nav-menu a { font-size: 0.8rem; }
 }
