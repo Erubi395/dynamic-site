@@ -1,31 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    const newsItems = document.querySelector(".news-items");
-    if (newsItems) {
-        newsItems.addEventListener("mouseenter", () => {
-            newsItems.style.animationPlayState = "paused";
-        });
-        newsItems.addEventListener("mouseleave", () => {
-            newsItems.style.animationPlayState = "running";
-        });
-    }
-    const links = document.querySelectorAll(".news-items a");
-    links.forEach(link => {
-        if (link.href.includes("news2.html")) {
-            link.style.color = "#ff5a5a";
-            link.style.fontWeight = "bold";
-        }
-    });
-    const galleryItems = document.querySelectorAll(".gallery img");
-    galleryItems.forEach(img => {
-        img.addEventListener("click", () => {
-            alert("作品をクリックしました");
-        });
-    });
-    const galleryImages = document.querySelectorAll(".cat-item img, .main-img, .gallery img");
+    const galleryImages = document.querySelectorAll(".cat-item img, .main-img, .gallery img, .art-grid img");
+    
     galleryImages.forEach(img => {
         img.style.cursor = "zoom-in";
+        
         img.onclick = (e) => {
+
             const overlay = document.createElement("div");
             overlay.style.cssText = `
                 position: fixed;
@@ -33,12 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0,0,0,0.8);
+                background: rgba(0,0,0,0.9);
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                z-index: 1000;
-                cursor: pointer;
+                z-index: 9999;
+                cursor: zoom-out;
+                opacity: 0;
+                transition: opacity 0.3s ease;
             `;
             const bigImg = document.createElement("img");
             bigImg.src = img.src;
@@ -46,12 +28,23 @@ document.addEventListener("DOMContentLoaded", () => {
             bigImg.style.maxHeight = "90%";
             bigImg.style.borderRadius = "8px";
             bigImg.style.boxShadow = "0 0 20px rgba(0,0,0,0.5)";
+            bigImg.style.transform = "scale(0.9)";
+            bigImg.style.transition = "transform 0.3s ease";
             
             overlay.appendChild(bigImg);
             document.body.appendChild(overlay);
 
+            requestAnimationFrame(() => {
+                overlay.style.opacity = "1";
+                bigImg.style.transform = "scale(1)";
+            });
+
             overlay.onclick = () => {
-                overlay.remove();
+                overlay.style.opacity = "0";
+                bigImg.style.transform = "scale(0.9)";
+                setTimeout(() => {
+                    overlay.remove();
+                }, 300);
             };
         };
     });
