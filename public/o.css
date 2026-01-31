@@ -5,20 +5,17 @@
   --bg-dark: #18181b;
   --primary-color: #ffcc00;
 }
-
 .main-content {
   position: relative;
   width: 100%;
-  height: 85vh; /* Өндрийг бага зэрэг нэмэв */
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
   perspective: 1200px;
   background-color: var(--bg-dark);
-  /* overflow: hidden; <-- Энийг түр авчих, карт халихад харагдаг */
   margin-top: 0; 
 }
-
 .carousel-container {
   position: relative;
   width: 0; 
@@ -26,7 +23,6 @@
   transform-style: preserve-3d;
   z-index: 10;
 }
-
 .carousel {
   position: absolute;
   top: 0;
@@ -35,8 +31,6 @@
   transition: transform 0.5s ease-out;
   transform: rotateY(var(--rotate-y, 0deg));
 }
-
-/* ЭНГИЙН КАРТ */
 .card {
   position: absolute;
   width: var(--card-width);
@@ -52,65 +46,49 @@
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   border: 1px solid #333;
-  z-index: 100; /* Энгийн үед */
+  z-index: 100;
 }
-
 .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: 0.5s;
 }
-
-/* --- ИДЭВХТЭЙ КАРТНЫ ЗАГВАР (Зассан) --- */
 .card.active {
-    /* 1. Хэмжээг тохиромжтой хэвтээ хэлбэрт оруулав */
     width: 600px !important;
     height: 350px !important;
-    
-    /* 2. Төвлөрүүлэх (Яг голд нь байрлуулна) */
-    top: -175px !important; /* height / 2 */
-    left: -300px !important; /* width / 2 */
-    
+    top: -175px !important; 
+    left: -300px !important; 
     background: #0f0f0f;
-    z-index: 9999 !important; /* Бусад бүх зүйлийн дээр гарна */
-
-    /* 3. 3D Хувиргалт:
-       translateZ-ийг хэт ихэсгэхгүйгээр (camera руу тулгахгүй),
-       scale ашиглаж бага зэрэг томруулна. Энэ нь дэлгэцээс халих эрсдэлийг бууруулна. */
+    z-index: 9999 !important; 
     transform: rotateY(var(--angle)) translateZ(var(--carousel-depth)) rotateY(calc(var(--angle) * -1)) scale(1.1) !important;
     
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
     cursor: default;
     border: 2px solid var(--primary-color);
-    overflow: hidden; /* Доторх контент халихаас сэргийлнэ */
+    overflow: hidden; 
 }
-
-/* Зураг болон Текст хэсгийг зэрэгцүүлэх */
 .card.active img {
     width: 40% !important;
     height: 100% !important;
     object-fit: cover;
-    float: left; /* Зургийг зүүн талд */
+    float: left;
 }
-
 .card.active .card-right-panel {
     width: 60% !important;
     height: 100% !important;
     display: flex !important;
-    float: right; /* Текстийг баруун талд */
+    float: right; 
     padding: 20px;
     box-sizing: border-box;
     background: #0f0f0f;
 }
-
-/* Гар утсан дээр (Mobile) багтахгүй бол автоматаар жижгэрэх тохиргоо */
 @media (max-width: 700px) {
     .card.active {
-        width: 90vw !important; /* Дэлгэцийн 90% */
+        width: 90vw !important; 
         height: auto !important;
         min-height: 400px;
-        left: -45vw !important; /* Төвлөрүүлэх */
+        left: -45vw !important; 
         top: -200px !important;
         flex-direction: column;
     }
@@ -122,8 +100,6 @@
         width: 100% !important;
     }
 }
-
-/* БАРУУН ТАЛЫН МЭДЭЭЛЭЛ */
 .card-right-panel {
   display: none;
   width: 60%;
@@ -132,12 +108,9 @@
   background: #0f0f0f;
   color: #fff;
 }
-
 .card.active .card-right-panel {
   display: flex;
 }
-
-/* БУСАД ЖИЖИГ ЗАГВАРУУД */
 .info-title {
   color: var(--primary-color);
   font-size: 1.2rem;
@@ -158,8 +131,6 @@
   border-left: 3px solid var(--primary-color);
   padding-left: 8px;
 }
-
-/* ТОВЧНУУД */
 .open-chat-btn, .back-to-info-btn, .send-btn {
   background: var(--primary-color);
   border: none;
@@ -172,19 +143,54 @@
   margin-top: auto; 
   font-size: 0.9rem;
 }
-.open-chat-btn:hover { background: #e6b800; }
-
-/* ЧАТ ХЭСЭГ */
-.chat-view { display: none; flex-direction: column; height: 100%; }
-.chat-header { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #333; }
-.messages { flex: 1; overflow-y: auto; background: rgba(255,255,255,0.05); padding: 5px; margin-bottom: 8px; border-radius: 4px; }
-.msg { padding: 5px 8px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 5px; }
-.msg.ai { background: #333; color: #fff; align-self: flex-start; }
-.msg.user { background: var(--primary-color); color: #000; align-self: flex-end; }
-.input-area { display: flex; gap: 5px; }
-.input-area input { flex: 1; background: #222; border: 1px solid #444; color: #fff; padding: 5px; }
-
-/* УДИРДЛАГЫН ТОВЧЛУУР (Z-INDEX-ийг Багасгасан) */
+.open-chat-btn:hover { 
+  background: #e6b800;
+}
+.chat-view {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+}
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.05); 
+  padding: 5px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+.msg {
+  padding: 5px 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+.msg.ai {
+  background: #333;
+  color: #fff;
+  align-self: flex-start;
+}
+.msg.user {
+  background: var(--primary-color);
+  color: #000;
+  align-self: flex-end;
+}
+.input-area {
+  display: flex;
+  gap: 5px;
+}
+.input-area input {
+  flex: 1; background: #222;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 5px;
+}
 .controls {
   position: absolute;
   bottom: 50px;
@@ -192,10 +198,9 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  z-index: 50; /* Картнаас бага байх ёстой! */
+  z-index: 50; 
   pointer-events: none; 
 }
-
 .btn {
   pointer-events: auto;
   background: rgba(255, 255, 255, 0.1);
