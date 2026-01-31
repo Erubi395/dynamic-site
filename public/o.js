@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     card.style.setProperty('--angle', `${i * anglePerCard}deg`);
     
     card.addEventListener('click', function(e) {
-      if (e.target.matches('button, input, .chat-view *')) return;
+      if (e.target.closest('.chat-view') || e.target.closest('button') || e.target.closest('input')) {
+        return;
+      }
       
       const isActive = this.classList.contains('active');
       cards.forEach(c => c.classList.remove('active'));
@@ -83,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function sendMessage(card) {
     const input = card.querySelector('.input-area input');
     const messagesContainer = card.querySelector('.messages');
-    
     const text = input.value.trim();
     
     if (!text) return;
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const aiMsg = document.createElement('div');
         aiMsg.className = 'msg ai';
-        aiMsg.textContent = "こんにちは！ご質問を受け取りました。すぐにお答えします。"; 
+        aiMsg.textContent = "ご質問ありがとうございます。少々お待ちください..."; 
         messagesContainer.appendChild(aiMsg);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }, 1000);

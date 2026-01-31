@@ -156,36 +156,62 @@ body {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0;
 }
 .chat-header {
   display: flex;
-  justify-content: flex-end; 
-  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+.chat-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .back-to-info-btn {
-  background: #333;
+  background: rgba(255, 255, 255, 0.15);
   color: #fff;
-  border: 1px solid #555;
-  padding: 5px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 15px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+.back-to-info-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 .messages {
-  flex: 1;
+  flex-grow: 1;
   overflow-y: auto;
-  background: rgba(255,255,255,0.05); 
+  background: rgba(0, 0, 0, 0.2); 
   padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
+  margin-bottom: 15px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  min-height: 0;
 }
 .msg {
   padding: 8px 12px;
   border-radius: 8px;
   font-size: 0.9rem;
-  max-width: 80%;
+  max-width: 85%;
+  line-height: 1.4;
+  word-wrap: break-word;
 }
 .msg.ai {
   background: #333;
@@ -202,25 +228,41 @@ body {
 }
 .input-area {
   display: flex;
-  gap: 10px;
+  width: 100%;
+  gap: 8px;
+  height: 45px;
+  flex-shrink: 0;
 }
 .input-area input {
   flex: 1; 
   background: #222;
   border: 1px solid #444;
   color: #fff;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 0 15px;
+  border-radius: 6px;
   outline: none;
+  font-size: 0.95rem;
+  min-width: 0;
+}
+.input-area input:focus {
+  border-color: var(--primary-color);
 }
 .send-btn {
   background: var(--primary-color);
   border: none;
   padding: 0 20px;
-  border-radius: 4px;
+  border-radius: 6px;
   color: #000;
   font-weight: bold;
+  font-size: 0.95rem;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+.send-btn:hover {
+  background: #ffdb4d;
+  transform: translateY(-2px);
 }
 .controls {
   position: absolute;
