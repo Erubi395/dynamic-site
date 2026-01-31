@@ -49,7 +49,6 @@ body {
   cursor: pointer;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 .card img {
@@ -72,7 +71,6 @@ body {
     transform: rotateY(var(--angle)) translateZ(var(--carousel-depth)) rotateY(calc(var(--angle) * -1)) scale(1.1) !important;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
     cursor: default;
-    border: 2px solid var(--primary-color);
     display: flex !important;
     align-items: center;
 }
