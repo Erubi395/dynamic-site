@@ -18,7 +18,8 @@ app.set("layout", "layouts/main");
 
 // Routes
 app.get("/", (req, res) => {
-  res.render("pages/home", { title: "Home Page" });
+  const newsList = news.slice(0, 10);
+  res.render("pages/home", { title: "Home Page", newsList: newsList });
 });
 
 app.get("/about", (req, res) => {
@@ -71,6 +72,7 @@ app.get("/news/:id", (req, res) => {
   res.render("pages/news", {
     title: newsItem.title,
     description: newsItem.description,
+    imageUrl: newsItem.imageUrl,
     newsList: news,
   });
 });
