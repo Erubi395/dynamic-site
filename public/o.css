@@ -62,43 +62,65 @@
   transition: 0.5s;
 }
 
+/* --- ИДЭВХТЭЙ КАРТНЫ ЗАГВАР (Зассан) --- */
 .card.active {
-    /* 1. Хэмжээг багасгав (Өмнө нь 500x350 байсан) */
-    width: 380px !important;
-    height: 500px !important; /* Босоо (Portrait) загвартай болгосон нь дээр (учир нь гар утас/PC аль алинд нь багтана) */
+    /* 1. Хэмжээг тохиромжтой хэвтээ хэлбэрт оруулав */
+    width: 600px !important;
+    height: 350px !important;
     
-    /* 2. Төвлөрүүлэх цэгийг шинэ хэмжээнд тааруулав */
-    top: -250px !important;  /* Өндрийн тал: 500 / 2 = 250 */
-    left: -190px !important; /* Өргөний тал: 380 / 2 = 190 */
+    /* 2. Төвлөрүүлэх (Яг голд нь байрлуулна) */
+    top: -175px !important; /* height / 2 */
+    left: -300px !important; /* width / 2 */
     
     background: #0f0f0f;
-    z-index: 9999 !important;
+    z-index: 9999 !important; /* Бусад бүх зүйлийн дээр гарна */
 
-    /* 3. Нааш татах зайг багасгав (+200px байсныг +50px болгов) */
-    /* Ингэснээр дэлгэц рүү хэт "нүүрлэхгүй" */
-    transform: rotateY(var(--angle)) translateZ(calc(var(--carousel-depth) + 50px)) rotateY(calc(var(--angle) * -1)) !important;
+    /* 3. 3D Хувиргалт:
+       translateZ-ийг хэт ихэсгэхгүйгээр (camera руу тулгахгүй),
+       scale ашиглаж бага зэрэг томруулна. Энэ нь дэлгэцээс халих эрсдэлийг бууруулна. */
+    transform: rotateY(var(--angle)) translateZ(var(--carousel-depth)) rotateY(calc(var(--angle) * -1)) scale(1.1) !important;
     
-    box-shadow: 0 0 80px rgba(0, 0, 0, 0.9); /* Сүүдрийг бага зэрэг багасгав */
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
     cursor: default;
     border: 2px solid var(--primary-color);
-    
-    /* Доторх контент багтахгүй бол гүйдэг болгох */
-    overflow: hidden; 
+    overflow: hidden; /* Доторх контент халихаас сэргийлнэ */
 }
 
-/* Том болсон үед зураг болон текст яаж харагдахыг засах */
+/* Зураг болон Текст хэсгийг зэрэгцүүлэх */
 .card.active img {
-    height: 40%; /* Зургийг дээд хэсэгт 40% эзлүүлнэ */
-    width: 100%;
+    width: 40% !important;
+    height: 100% !important;
     object-fit: cover;
+    float: left; /* Зургийг зүүн талд */
 }
 
 .card.active .card-right-panel {
-    height: 60%; /* Үлдсэн зайнд мэдээлэл/чат харагдана */
-    width: 100%;
-    display: flex;
-    padding: 15px;
+    width: 60% !important;
+    height: 100% !important;
+    display: flex !important;
+    float: right; /* Текстийг баруун талд */
+    padding: 20px;
     box-sizing: border-box;
+    background: #0f0f0f;
+}
+
+/* Гар утсан дээр (Mobile) багтахгүй бол автоматаар жижгэрэх тохиргоо */
+@media (max-width: 700px) {
+    .card.active {
+        width: 90vw !important; /* Дэлгэцийн 90% */
+        height: auto !important;
+        min-height: 400px;
+        left: -45vw !important; /* Төвлөрүүлэх */
+        top: -200px !important;
+        flex-direction: column;
+    }
+    .card.active img {
+        width: 100% !important;
+        height: 150px !important;
+    }
+    .card.active .card-right-panel {
+        width: 100% !important;
+    }
 }
 
 /* БАРУУН ТАЛЫН МЭДЭЭЛЭЛ */
