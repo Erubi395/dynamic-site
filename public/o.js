@@ -89,4 +89,62 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  // --- 5. ЧАТ БИЧИХ ЛОГИК (Go товч болон Enter дарах) ---
+  
+  // Мессеж илгээх функц
+  function sendMessage(card) {
+    const input = card.querySelector('.input-area input');
+    const messagesContainer = card.querySelector('.messages');
+    
+    const text = input.value.trim();
+    
+    // Хэрэв хоосон бол юу ч хийхгүй
+    if (!text) return;
+
+    // 1. Хэрэглэгчийн мессежийг нэмэх
+    const userMsg = document.createElement('div');
+    userMsg.className = 'msg user';
+    userMsg.textContent = text;
+    messagesContainer.appendChild(userMsg);
+    
+    // Input-ийг цэвэрлэх
+    input.value = '';
+    
+    // Доош нь гүйлгэх (Scroll to bottom)
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    // 2. AI хариулт өгөх (Жишээ: 1 секундын дараа)
+    setTimeout(() => {
+        const aiMsg = document.createElement('div');
+        aiMsg.className = 'msg ai';
+        // Энд AI-ийн хариултыг солих боломжтой
+        aiMsg.textContent = "Сайн байна уу? Таны асуултыг хүлээж авлаа. Би удахгүй хариулах болно."; 
+        messagesContainer.appendChild(aiMsg);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }, 1000);
+  }
+
+  // "Go" товч дээр дарах үед
+  document.querySelectorAll('.send-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Карт хаагдахаас сэргийлнэ
+      const card = btn.closest('.card');
+      sendMessage(card);
+    });
+  });
+
+  // "Enter" товч дарах үед
+  document.querySelectorAll('.input-area input').forEach(input => {
+    input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const card = input.closest('.card');
+        sendMessage(card);
+      }
+    });
+    
+    // Input дээр дарахад карт хаагдахаас сэргийлэх
+    input.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+  });
 });
