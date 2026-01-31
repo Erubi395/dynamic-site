@@ -22,14 +22,9 @@
   <div class="ticker-badge">NEWS</div>
   <div class="ticker-wrapper">
     <div class="ticker-track">
-      <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
-      <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
-      <a href="/news3">2025.11.01 AO入試エントリー開始</a>
-      <a href="/news4">2025.10.10 推薦入試 出願受付開始</a>
-      <a href="/news5">2025.09.25 留学生向け説明会 開催</a>
-      <a href="/news6">2025.09.01 後期授業スタート</a>
-      <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
-      <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
+      <% if (typeof newsList !== 'undefined' && Array.isArray(newsList)) { %> <% newsList.forEach(function(news) { %>
+      <a href="/news/<%= news.id %>"><%= news.title %></a>
+      <% }); %> <% } %>
     </div>
   </div>
 </div>
@@ -44,7 +39,7 @@
       島根デザイン専門学校は、最先端のIT技術とデザインを学べる専門学校です。<br />
       実践的な授業とチーム開発で社会に通用するスキルを身につけます。
     </p>
-    <a href="school.html" class="btn-details">詳細を見る</a>
+    <a href="/school" class="btn-details">詳細を見る</a>
   </div>
 </section>
 
@@ -69,7 +64,7 @@
 <section class="image-gallery" id="gallery">
   <div class="new-container" data-aos="zoom-in">
     <h2 style="text-align: center; color: #7ec8f2; margin-bottom: 20px">入学写真</h2>
-    <img src="zurag/main_bg.jpg" alt="Admission Photo" />
+    <img src="/zurag/main_bg.jpg" alt="Admission Photo" />
   </div>
 </section>
 
