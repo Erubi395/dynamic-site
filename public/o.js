@@ -56,9 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation(); 
       const card = btn.closest('.card');
-      if (card) {
-        card.querySelector('.info-view').style.display = 'none';
-        card.querySelector('.chat-view').style.display = 'flex';
+      const infoView = card.querySelector('.info-view');
+      const chatView = card.querySelector('.chat-view');
+
+      if (infoView && chatView) {
+        infoView.style.display = 'none';
+        chatView.style.display = 'flex';
       }
     });
   });
@@ -67,9 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const card = btn.closest('.card');
-      if (card) {
-        card.querySelector('.info-view').style.display = 'flex';
-        card.querySelector('.chat-view').style.display = 'none';
+      const infoView = card.querySelector('.info-view');
+      const chatView = card.querySelector('.chat-view');
+
+      if (infoView && chatView) {
+        chatView.style.display = 'none';
+        infoView.style.display = 'flex';
       }
     });
   });
