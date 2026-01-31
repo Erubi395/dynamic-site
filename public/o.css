@@ -62,33 +62,43 @@
   transition: 0.5s;
 }
 
-/* ИДЭВХТЭЙ (ТОМОРСОН) КАРТ */
 .card.active {
-  /* Хэмжээг дэлгэцэнд багтахаар тохируулав */
-  width: 500px !important;
-  height: 350px !important;
-  
-  /* Төвлөрүүлэх */
-  top: -175px !important; /* height / 2 */
-  left: -250px !important; /* width / 2 */
-  
-  background: #0f0f0f;
-  
-  /* ЭНЭ ХАМГИЙН ЧУХАЛ НЬ: Товчлуурын дээр гаргана */
-  z-index: 9999 !important; 
-  
-  /* Камерыг нааш нь татаж, эргэлтийг тэглэнэ (нүүрээрээ харах) */
-  transform: rotateY(var(--angle)) translateZ(calc(var(--carousel-depth) + 200px)) rotateY(calc(var(--angle) * -1)) !important;
-  
-  box-shadow: 0 0 100px rgba(0,0,0,0.9);
-  cursor: default;
-  border: 2px solid var(--primary-color);
+    /* 1. Хэмжээг багасгав (Өмнө нь 500x350 байсан) */
+    width: 380px !important;
+    height: 500px !important; /* Босоо (Portrait) загвартай болгосон нь дээр (учир нь гар утас/PC аль алинд нь багтана) */
+    
+    /* 2. Төвлөрүүлэх цэгийг шинэ хэмжээнд тааруулав */
+    top: -250px !important;  /* Өндрийн тал: 500 / 2 = 250 */
+    left: -190px !important; /* Өргөний тал: 380 / 2 = 190 */
+    
+    background: #0f0f0f;
+    z-index: 9999 !important;
+
+    /* 3. Нааш татах зайг багасгав (+200px байсныг +50px болгов) */
+    /* Ингэснээр дэлгэц рүү хэт "нүүрлэхгүй" */
+    transform: rotateY(var(--angle)) translateZ(calc(var(--carousel-depth) + 50px)) rotateY(calc(var(--angle) * -1)) !important;
+    
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.9); /* Сүүдрийг бага зэрэг багасгав */
+    cursor: default;
+    border: 2px solid var(--primary-color);
+    
+    /* Доторх контент багтахгүй бол гүйдэг болгох */
+    overflow: hidden; 
 }
 
+/* Том болсон үед зураг болон текст яаж харагдахыг засах */
 .card.active img {
-  width: 40%;
-  height: 100%;
-  object-fit: cover;
+    height: 40%; /* Зургийг дээд хэсэгт 40% эзлүүлнэ */
+    width: 100%;
+    object-fit: cover;
+}
+
+.card.active .card-right-panel {
+    height: 60%; /* Үлдсэн зайнд мэдээлэл/чат харагдана */
+    width: 100%;
+    display: flex;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 /* БАРУУН ТАЛЫН МЭДЭЭЛЭЛ */
