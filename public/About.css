@@ -74,6 +74,9 @@ body {
   font-size: 1.2rem;
   line-height: 2.2;
 }
+.memory-text p {
+  color: #000;
+}
 .photo-flow {
   background: #111;
   padding: 60px 0;
