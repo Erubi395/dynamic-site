@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="common.css">
 <link rel="stylesheet" href="o.css">
-
 <div class="new-news-ticker">
   <div class="ticker-badge">NEWS</div>
   <div class="ticker-wrapper">
@@ -23,7 +22,6 @@
       
       <div class="card" data-title="Edward Teacher">
         <img src="zurag/8707.PNG" alt="Edward">
-        
         <div class="card-right-panel">
           <div class="info-view">
             <h4 class="info-title">Edward 先生</h4>
@@ -34,7 +32,6 @@
             </ul>
             <button class="open-chat-btn">先生とチャットする</button>
           </div>
-
           <div class="chat-view" style="display: none;">
             <div class="chat-header">
               <span class="info-title" style="margin:0; font-size:1rem;">Edward AI</span>
@@ -53,7 +50,6 @@
 
       <div class="card" data-title="谷口 直也">
         <img src="zurag/783.png" alt="谷口 直也">
-        
         <div class="card-right-panel">
           <div class="info-view">
             <h4 class="info-title">谷口 直也 先生</h4>
@@ -64,7 +60,6 @@
             </ul>
             <button class="open-chat-btn">先生とチャットする</button>
           </div>
-
           <div class="chat-view" style="display: none;">
             <div class="chat-header">
               <span class="info-title" style="margin:0; font-size:1rem;">Taniguchi AI</span>
@@ -87,35 +82,7 @@
 
     </div>
   </div>
-  - const DATA = [
-- 	'1540968221243-29f5d70540bf', 
-- 	'1596135187959-562c650d98bc', 
-- 	'1628944682084-831f35256163', 
-- 	'1590013330451-3946e83e0392', 
-- 	'1590421959604-741d0eec0a2e', 
-- 	'1572613000712-eadc57acbecd', 
-- 	'1570097192570-4b49a6736f9f', 
-- 	'1620789550663-2b10e0080354', 
-- 	'1617775623669-20bff4ffaa5c', 
-- 	'1548600916-dc8492f8e845', 
-- 	'1573824969595-a76d4365a2e6', 
-- 	'1633936929709-59991b5fdd72'
-- ];
-- const N = DATA.length;
 
-.scene
-	.a3d(style=`--n: ${N}`)
-		- for(let i = 0; i < N; i++)
-			img.card(src=`https://images.unsplash.com/photo-${DATA[i]}?w=280` 
-			         style=`--i: ${i}` alt='jellifish')
-
-//- generates this kind of HTML:
-//- <div class="scene">
-//-		<div class="a3d" style="--n: 12">
-//- 		<img class="card" src="image0.jpg" style="--i: 0" alt="image description"/>
-//- 		<img class="card" src="image1.jpg" style="--i: 1" alt="image description"/>
-//- 	</div>
-//- </div>
   <div class="controls">
     <button class="btn" id="prevBtn">❮</button>
     <button class="btn" id="nextBtn">❯</button>

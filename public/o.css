@@ -1,6 +1,3 @@
-.main-content, .content-wrapper {
-  padding-top: 140px !important; 
-}
 :root {
   --carousel-depth: 400px;
   --card-width: 140px;
@@ -9,18 +6,24 @@
   --primary-color: #ffcc00;
 }
 .main-content {
-  height: 100vh;
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
   perspective: 1200px;
   background-color: var(--bg-dark);
-  overflow: hidden; 
+  overflow: hidden;
+  margin-top: 0; 
 }
 .carousel-container {
   position: relative;
-  width: 0; height: 0;
+  width: 0; 
+  height: 0;
   transform-style: preserve-3d;
+  z-index: 10;
 }
 .carousel {
   position: absolute;
@@ -44,6 +47,7 @@
   display: flex;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid #333;
 }
 .card img {
   width: 100%;
@@ -52,17 +56,20 @@
   transition: 0.5s;
 }
 .card.active {
-  width: 550px !important;
-  height: 350px !important;
-  top: -175px; left: -275px;
+  width: 600px !important;
+  height: 400px !important;
+  top: -200px; 
+  left: -300px; 
   background: #0f0f0f;
-  z-index: 1000;
-  transform: rotateY(var(--angle)) translateZ(calc(var(--carousel-depth) + 100px)) !important;
+  z-index: 2000; 
+  transform: rotateY(var(--angle)) translateZ(calc(var(--carousel-depth) + 150px)) !important;
   box-shadow: 0 0 50px rgba(0,0,0,0.9), 0 0 20px rgba(255,204,0,0.2);
+  cursor: default;
 }
 .card.active img {
   width: 40%;
   height: 100%;
+  object-fit: cover;
 }
 .card-right-panel {
   display: none;
@@ -85,6 +92,8 @@
   font-size: 1.4rem;
   margin: 0 0 15px 0;
   font-weight: 700;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
 }
 .info-list {
   list-style: none;
@@ -92,29 +101,30 @@
   margin: 0 0 20px 0;
 }
 .info-list li {
-  margin-bottom: 10px;
-  font-size: 0.9rem;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
   color: #ccc;
-  border-left: 2px solid var(--primary-color);
-  padding-left: 10px;
+  border-left: 3px solid var(--primary-color);
+  padding-left: 12px;
 }
 .open-chat-btn, .back-to-info-btn, .send-btn {
   background: var(--primary-color);
   border: none;
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 6px;
   color: #000;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  margin-top: auto; 
 }
-.open-chat-btn:hover {
+.open-chat-btn:hover, .back-to-info-btn:hover, .send-btn:hover {
   background: #e6b800;
 }
 .chat-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
   margin-bottom: 15px;
   border-bottom: 1px solid #333;
   padding-bottom: 10px;
@@ -128,11 +138,17 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
-
+.messages::-webkit-scrollbar {
+  width: 5px;
+}
+.messages::-webkit-scrollbar-thumb {
+  background: #444; 
+  border-radius: 5px;
+}
 .msg {
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 12px;
   font-size: 0.85rem;
   max-width: 85%;
@@ -140,12 +156,15 @@
 }
 .msg.ai {
   background: #333;
+  color: #fff;
   align-self: flex-start;
+  border-bottom-left-radius: 2px;
 }
 .msg.user {
   background: var(--primary-color);
   color: #000;
   align-self: flex-end;
+  border-bottom-right-radius: 2px;
 }
 .input-area {
   display: flex;
@@ -156,30 +175,36 @@
   background: #222;
   border: 1px solid #444;
   color: #fff;
-  padding: 8px;
+  padding: 10px;
   border-radius: 4px;
+}
+.input-area input:focus {
+  outline: none;
+  border-color: var(--primary-color);
 }
 .controls {
   position: absolute;
-  bottom: 8%;
+  bottom: 30px;
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 40px;
   z-index: 1800;
+  pointer-events: none; 
 }
 .btn {
-  background: rgba(255, 255, 255, 0.05);
+  pointer-events: auto; 
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2); 
   color: #fff;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   transition: 0.3s;
   backdrop-filter: blur(5px);
 }
@@ -187,4 +212,5 @@
   background: var(--primary-color);
   color: #000;
   border-color: var(--primary-color);
+  transform: scale(1.1);
 }

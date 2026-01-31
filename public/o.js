@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.card');
 
   if (!carousel || !nextBtn || !prevBtn || cards.length === 0) {
-    console.log("Carousel elements not found - Skipping carousel script");
     return;
   }
 
@@ -16,56 +15,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cards.forEach((card, i) => {
     card.style.setProperty('--angle', `${i * anglePerCard}deg`);
-    
     card.addEventListener('click', function(e) {
 
       if (e.target.matches('button, input, .chat-view *')) return;
-      
-      cards.forEach(c => { if (c !== this) c.classList.remove('active'); });
-      this.classList.toggle('active');
+
+      const isActive = this.classList.contains('active');
+      cards.forEach(c => c.classList.remove('active'));
+  
+      if (!isActive) {
+        this.classList.add('active');
+      }
     });
   });
-
   function animate() {
     const isAnyCardActive = document.querySelector('.card.active');
 
     if (!isHovered && !isAnyCardActive) {
-      currentAngle -= 0.1;
+      currentAngle -= 0.1; 
     }
+    
     carousel.style.setProperty('--rotate-y', `${currentAngle}deg`);
     requestAnimationFrame(animate);
   }
   animate();
 
-  nextBtn.addEventListener('click', () => { currentAngle -= anglePerCard; });
-  prevBtn.addEventListener('click', () => { currentAngle += anglePerCard; });
-
+  nextBtn.addEventListener('click', () => { 
+    currentAngle -= anglePerCard; 
+  });
+  
+  prevBtn.addEventListener('click', () => { 
+    currentAngle += anglePerCard; 
+  });
   carousel.addEventListener('mouseenter', () => { isHovered = true; });
   carousel.addEventListener('mouseleave', () => { isHovered = false; });
 
   document.querySelectorAll('.open-chat-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); 
       const card = btn.closest('.card');
       if (card) {
-        const infoView = card.querySelector('.info-view');
-        const chatView = card.querySelector('.chat-view');
-        if (infoView && chatView) {
-            infoView.style.display = 'none';
-            chatView.style.display = 'flex';
-        }
+        card.querySelector('.info-view').style.display = 'none';
+        card.querySelector('.chat-view').style.display = 'flex';
       }
     });
   });
   document.querySelectorAll('.back-to-info-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const card = btn.closest('.card');
       if (card) {
-        const infoView = card.querySelector('.info-view');
-        const chatView = card.querySelector('.chat-view');
-        if (infoView && chatView) {
-            infoView.style.display = 'flex';
-            chatView.style.display = 'none';
-        }
+        card.querySelector('.info-view').style.display = 'flex';
+        card.querySelector('.chat-view').style.display = 'none';
       }
     });
   });
