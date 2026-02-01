@@ -241,3 +241,72 @@ h3 i {
     border-radius: 12px;
     border: 1px solid #ddd;
 }
+/* ===== ACCESS NEWS TICKER ===== */
+.access-news-bar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1500;
+}
+
+.access-badge {
+  background: #e95451;
+  color: #fff;
+  font-weight: bold;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.access-ticker-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.access-ticker-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  white-space: nowrap;
+  animation: accessTicker 40s linear infinite;
+}
+
+.access-ticker-list li {
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.access-date {
+  background: #fff;
+  color: #b21f1f;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 12px;
+  font-weight: bold;
+}
+
+.access-ticker-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.access-ticker-list a:hover {
+  text-decoration: underline;
+}
+
+@keyframes accessTicker {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}

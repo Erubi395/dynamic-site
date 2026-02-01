@@ -1,46 +1,36 @@
-// Google Map Init Function
-function initMap() {
-    // Сургуулийн байршил (Coordinates)
-    const schoolLocation = { lat: 35.4547, lng: 133.0583 }; 
+function openModal(jobType) {
+    const modal = document.getElementById("careerModal");
+    const data = careerData[jobType];
+    if (!modal || !data) return;
 
-    // Газрын зураг үүсгэх
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 16,
-        center: schoolLocation,
-        styles: [
-            {
-                "featureType": "poi",
-                "elementType": "labels.text.fill",
-                "stylers": [{ "color": "#747474" }]
-            }
-        ]
+    document.getElementById("m-image").src = data.image;
+    document.getElementById("m-title").textContent = data.title;
+    document.getElementById("m-subtitle").textContent = data.subtitle;
+    document.getElementById("m-desc").textContent = data.desc;
+    document.getElementById("m-salary").textContent = data.salary;
+
+    const skillsList = document.getElementById("m-skills");
+    skillsList.innerHTML = "";
+
+    data.skills.forEach(skill => {
+        const li = document.createElement("li");
+        li.textContent = skill;
+        skillsList.appendChild(li);
     });
 
-    // Улаан тэмдэглэгээ (Marker)
-    const marker = new google.maps.Marker({
-        position: schoolLocation,
-        map: map,
-        title: "Shimane Design School",
-        animation: google.maps.Animation.DROP
-    });
-
-    // Мэдээллийн цонх (Info Window)
-    const infoWindow = new google.maps.InfoWindow({
-        content: '<div style="padding:10px; color:#333;"><strong>Shimane Design School</strong><br>Welcome to our campus!</div>'
-    });
-
-    marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-    });
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden";
 }
 
-// News Ticker Loop Logic
-document.addEventListener('DOMContentLoaded', () => {
-    const list = document.querySelector('.ticker-list');
-    
-    // Жагсаалт олдвол доторх агуулгыг нь хувилж залгана
-    // Энэ нь текстийг тасралтгүй урсаж байгаа мэт харагдуулна
-    if(list) {
-        list.innerHTML += list.innerHTML;
-    }
+function closeModal() {
+    const modal = document.getElementById("careerModal");
+    if (!modal) return;
+
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+window.addEventListener("click", e => {
+    const modal = document.getElementById("careerModal");
+    if (e.target === modal) closeModal();
 });
