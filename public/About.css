@@ -58,16 +58,6 @@ body {
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.4;
 }
-#musicBtn {
-  margin-top: 40px;
-  padding: 12px 30px;
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
 .memory-text {
   padding: 120px 20px;
   text-align: center;
