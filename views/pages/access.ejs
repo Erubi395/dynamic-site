@@ -1,82 +1,77 @@
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="/common.css">
 <link rel="stylesheet" href="/access.css">
-<div class="access-news-bar">
-  <div class="access-badge">NEWS</div>
-
-  <div class="access-ticker-container">
-    <ul class="access-ticker-list">
-      <li>
-        <span class="access-date">2025.12.15</span>
-        <a href="#">学生作品展が大盛況でした。</a>
-      </li>
-      <li>
-        <span class="access-date">2025.11.01</span>
-        <a href="#">2026年度 生徒募集中！</a>
-      </li>
-      <li>
-        <span class="access-date">2025.10.10</span>
-        <a href="#">AO入試エントリー開始</a>
-      </li>
-      <li>
-        <span class="access-date">2025.10.10</span>
-        <a href="#">推薦入試 出願受付中！</a>
-      </li>
-    </ul>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<div class="new-news-ticker">
+  <div class="ticker-badge">NEWS</div>
+  <div class="ticker-wrapper">
+    <div class="ticker-track">
+      <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
+      <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
+      <a href="/news3">2025.11.01 AO入試エントリー開始</a>
+      <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
+      <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
+      <a href="/news3">2025.11.01 AO入試エントリー開始</a>
+    </div>
   </div>
 </div>
+<main class="modern-access-wrapper">
 
-<main>
-  <div class="page-title">
-    <h2>Access</h2>
-    <p>島根デザイン専門学校へのアクセス</p>
-  </div>
+  <section class="access-header">
+    <div class="header-content">
+      <span class="sub-title">Shimane IT Design College</span>
+      <h1>ACCESS</h1>
+      <div class="divider"></div>
+      <p>学校へのアクセス・周辺地図</p>
+    </div>
+  </section>
 
   <div class="access-grid">
-    <section class="access-info-card">
-      <h3><i class="fas fa-map-Erkhee1206
-        marker-alt"></i> 所在地・連絡先</h3>
-      <div class="info-details">
-        <p><strong>住所:</strong></p>
-        <p class="highlight">〒690-0046 島根県松江市西乃木1丁目1-50</p>
-        <hr>
-        <p><strong>お問い合わせ:</strong></p>
-        <p><i class="fas fa-phone"></i> 0852-24-3000</p>
-        <p><i class="fas fa-envelope"></i> shimade@shimade.ac.jp</p>
+    
+    <div class="info-column">
+      
+      <div class="info-card">
+        <div class="icon-box">📍</div>
+        <div class="text-box">
+          <h3>所在地</h3>
+          <p class="zip-code">〒690-0046</p>
+          <p class="address-text">島根県松江市西乃木1丁目1-50</p>
+        </div>
       </div>
-    </section>
 
-    <section class="transport-card">
-      <h3><i class="fas fa-subway"></i> 交通アクセス</h3>
-      <ul class="transport-list">
-        <li>
-          <span class="icon-box"><i class="fas fa-walking"></i></span>
-          <div>
-            <strong>JR乃木駅 (Nogi Station)</strong> から徒歩 <span class="time">約7分</span>
-          </div>
-        </li>
-        <li>
-          <span class="icon-box"><i class="fas fa-bus"></i></span>
-          <div>
-            市営バス <strong>「西乃木」</strong> バス停下車 徒歩2分
-          </div>
-        </li>
-        <li>
-          <span class="icon-box"><i class="fas fa-car"></i></span>
-          <div>
-             国道9号線からアクセス便利（駐車場あり）
-          </div>
-        </li>
-      </ul>
-    </section>
+      <div class="info-card">
+        <div class="icon-box">📞</div>
+        <div class="text-box">
+          <h3>連絡先</h3>
+          <p class="phone-number">0852-24-3000</p>
+          <p class="email-text">shimade@shimade.ac.jp</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="icon-box">🚌</div>
+        <div class="text-box">
+          <h3>交通アクセス</h3>
+          <ul class="transport-list">
+            <li><span>JR乃木駅</span> より徒歩 約7分</li>
+            <li><span>市営バス「西乃木」</span> 下車 徒歩2分</li>
+            <li>国道9号線沿い（駐車場完備）</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="map-column">
+      <div class="map-frame">
+        <iframe 
+          src="https://maps.google.com/maps?q=Shimane%20Design%20Professional%20School&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
   </div>
-
-  <section class="map-section">
-    <h3>Map</h3>
-    <div id="map"></div>
-  </section>
 </main>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap" async defer></script>
 <script src="/access.js"></script>
