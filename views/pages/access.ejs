@@ -1,0 +1,69 @@
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="/css/access.css">
+
+<div class="news-bar">
+  <div class="news-inner">
+    <div class="news-badge">NEWS</div>
+    <div class="news-scroll-wrapper">
+      <ul class="news-list">
+        <li>2025.12.15 学生作品展が大盛況でした。</li>
+        <li>2025.11.01 2026年度 生徒募集中！</li>
+        <li>2025.10.10 オープンキャンパス開催中</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="page-title">
+    <h2>Access</h2>
+    <p>島根デザイン専門学校へのアクセス</p>
+  </div>
+
+  <div class="access-grid">
+    <section class="access-info-card">
+      <h3><i class="fas fa-map-marker-alt"></i> 所在地・連絡先</h3>
+      <div class="info-details">
+        <p><strong>住所:</strong></p>
+        <p class="highlight">〒690-0046 島根県松江市西乃木1丁目1-50</p>
+        <hr>
+        <p><strong>お問い合わせ:</strong></p>
+        <p><i class="fas fa-phone"></i> 0852-24-3000</p>
+        <p><i class="fas fa-envelope"></i> shimade@shimade.ac.jp</p>
+      </div>
+    </section>
+
+    <section class="transport-card">
+      <h3><i class="fas fa-subway"></i> 交通アクセス</h3>
+      <ul class="transport-list">
+        <li>
+          <span class="icon-box"><i class="fas fa-walking"></i></span>
+          <div>
+            <strong>JR乃木駅 (Nogi Station)</strong> から徒歩 <span class="time">約7分</span>
+          </div>
+        </li>
+        <li>
+          <span class="icon-box"><i class="fas fa-bus"></i></span>
+          <div>
+            市営バス <strong>「西乃木」</strong> バス停下車 徒歩2分
+          </div>
+        </li>
+        <li>
+          <span class="icon-box"><i class="fas fa-car"></i></span>
+          <div>
+             国道9号線からアクセス便利（駐車場あり）
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="map-section">
+    <h3>Map</h3>
+    <div id="map"></div>
+  </section>
+</main>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<script src="/js/access.js"></script>
