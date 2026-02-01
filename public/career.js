@@ -19,8 +19,7 @@ const careerData = {
         title: "インフラ・ネットワークエンジニア",
         subtitle: "Network & Security Engineer",
         desc: "IT社会の基盤（インフラ）を支える仕事です。サーバーの構築、ネットワークの管理、そしてサイバー攻撃からシステムを守るセキュリティ対策を行います。",
-        // Шинэ зураг (Unsplash)
-        image: "https://images.unsplash.com/photo-1558494949-ef526b0053ea?q=80&w=2070&auto=format&fit=crop",
+        image: "/public/zurag/career3.png",
         skills: ["Linux / Windows Server", "Cisco (CCNA)", "クラウド (AWS/Azure)", "セキュリティ基礎"],
         salary: "平均年収: 450万円 〜 900万円"
     },
@@ -28,8 +27,7 @@ const careerData = {
         title: "グラフィックデザイナー",
         subtitle: "Graphic Designer",
         desc: "ポスター、雑誌広告、パッケージデザイン、ロゴなど、印刷物を中心としたビジュアルデザインを行います。",
-        // Шинэ зураг (Unsplash)
-        image: "https://images.unsplash.com/photo-1626785774573-4b799312afc2?q=80&w=2070&auto=format&fit=crop",
+        image: "/public/zurag/career4.png",
         skills: ["Adobe Illustrator", "Adobe Photoshop", "InDesign", "色彩感覚・タイポグラフィ"],
         salary: "平均年収: 350万円 〜 600万円"
     },
@@ -53,7 +51,6 @@ const careerData = {
 function openModal(jobType) {
     const modal = document.getElementById("careerModal");
     const data = careerData[jobType];
-
     if (!data) return;
 
     document.getElementById("m-image").src = data.image;
@@ -69,6 +66,7 @@ function openModal(jobType) {
         li.innerText = skill;
         skillsList.appendChild(li);
     });
+
     modal.style.display = "block";
     document.body.style.overflow = "hidden";
 }

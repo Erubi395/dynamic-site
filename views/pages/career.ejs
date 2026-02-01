@@ -1,25 +1,27 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="/common.css">
 <link rel="stylesheet" href="/career.css">
-    <div class="new-news-ticker">
-        <div class="ticker-badge">NEWS</div>
-        <div class="ticker-wrapper">
-            <div class="ticker-track">
-                <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
-                <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
-                <a href="/news3">2025.11.01 AO入試エントリー開始</a>
-                <a href="/news4">2025.10.10 推薦入試 出願受付開始</a>
-                <a href="/news5">2025.09.25 留学生向け説明会 開催</a>
-                <a href="/news6">2025.09.01 後期授業スタート</a>
-                <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
-                <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
-            </div>
-        </div>
+<div class="new-news-ticker">
+  <div class="ticker-badge">NEWS</div>
+  <div class="ticker-wrapper">
+    <div class="ticker-track">
+        <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
+        <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
+        <a href="/news3">2025.11.01 AO入試エントリー開始</a>
+        <a href="/news4">2025.10.10 推薦入試 出願受付開始</a>
+        <a href="/news5">2025.09.25 留学生向け説明会 開催</a>
+        <a href="/news6">2025.09.01 後期授業スタート</a>
+        <a href="/news1">2026.01.20 オープンキャンパス受付中！</a>
+        <a href="/news2">2025.12.15 学生作品展が大盛況でした。</a>
     </div>
+  </div>
+</div>
+
     <header class="page-header">
         <h1>卒業後の進路</h1>
         <p>あなたの「好き」を仕事にする。未来の自分を見つけよう。</p>
     </header>
+
     <main>
         <section class="career-section">
             <div class="section-title">
@@ -49,7 +51,7 @@
                 </div>
                 <div class="career-card" onclick="openModal('sys')">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef526b0053ea?q=80&w=2070&auto=format&fit=crop" alt="System Eng">
+                        <img src="/public/zurag/career3.png" alt="System Eng">
                         <div class="overlay"><i class="fa-solid fa-server"></i></div>
                     </div>
                     <div class="card-content">
@@ -59,6 +61,7 @@
                 </div>
             </div>
         </section>
+
         <section class="career-section">
             <div class="section-title">
                 <h2>デザイン・クリエイティブ学科</h2>
@@ -67,7 +70,7 @@
             <div class="career-grid">
                 <div class="career-card" onclick="openModal('graphic')">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799312afc2?q=80&w=2070&auto=format&fit=crop" alt="Graphic Design">
+                        <img src="/public/zurag/career4.png" alt="Graphic Design">
                         <div class="overlay"><i class="fa-solid fa-pen-nib"></i></div>
                     </div>
                     <div class="card-content">
@@ -98,6 +101,7 @@
             </div>
         </section>
     </main>
+
     <div id="careerModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -121,4 +125,5 @@
             </div>
         </div>
     </div>
+    
 <script src="/career.js"></script>
