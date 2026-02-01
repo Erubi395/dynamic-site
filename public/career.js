@@ -19,7 +19,7 @@ const careerData = {
         title: "インフラ・ネットワークエンジニア",
         subtitle: "Network & Security Engineer",
         desc: "IT社会の基盤（インフラ）を支える仕事です。サーバーの構築、ネットワークの管理、そしてサイバー攻撃からシステムを守るセキュリティ対策を行います。",
-        image: "/public/zurag/career3.png",
+        image: "https://www.bigdata-navi.com/aidrops/wp-content/uploads/2020/01/infrastructure-engineer.jpg",
         skills: ["Linux / Windows Server", "Cisco (CCNA)", "クラウド (AWS/Azure)", "セキュリティ基礎"],
         salary: "平均年収: 450万円 〜 900万円"
     },
@@ -27,7 +27,7 @@ const careerData = {
         title: "グラフィックデザイナー",
         subtitle: "Graphic Designer",
         desc: "ポスター、雑誌広告、パッケージデザイン、ロゴなど、印刷物を中心としたビジュアルデザインを行います。",
-        image: "/public/zurag/career4.png",
+        image: "https://school.dhw.co.jp/images/New_folder/kannrenn/g1.png",
         skills: ["Adobe Illustrator", "Adobe Photoshop", "InDesign", "色彩感覚・タイポグラフィ"],
         salary: "平均年収: 350万円 〜 600万円"
     },
