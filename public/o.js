@@ -4,51 +4,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.getElementById('prevBtn');
   const cards = document.querySelectorAll('.card');
 
-  if (!carousel || !nextBtn || !prevBtn || cards.length === 0) {
-    return;
-  }
+  if (!carousel || !nextBtn || !prevBtn || cards.length === 0) return;
 
   const totalCards = cards.length;
   const anglePerCard = 360 / totalCards;
   let currentAngle = 0;
   let isHovered = false;
+  let autoRotateId = null;
 
   cards.forEach((card, i) => {
     card.style.setProperty('--angle', `${i * anglePerCard}deg`);
     
     card.addEventListener('click', function(e) {
-      if (e.target.closest('.chat-view') || e.target.closest('button') || e.target.closest('input')) {
-        return;
-      }
-      
+      if (e.target.closest('.card-right-panel')) return;
       const isActive = this.classList.contains('active');
       cards.forEach(c => c.classList.remove('active'));
-      
       if (!isActive) {
         this.classList.add('active');
+        currentAngle = -(i * anglePerCard);
+        updateCarousel();
+      } else {
+        this.classList.remove('active');
       }
     });
   });
 
+  function updateCarousel() {
+    carousel.style.setProperty('--rotate-y', `${currentAngle}deg`);
+  }
   function animate() {
     const isAnyCardActive = document.querySelector('.card.active');
-
     if (!isHovered && !isAnyCardActive) {
-      currentAngle -= 0.1; 
+      currentAngle -= 0.2;
+      updateCarousel();
     }
     
-    carousel.style.setProperty('--rotate-y', `${currentAngle}deg`);
     requestAnimationFrame(animate);
   }
   
   animate();
-
   nextBtn.addEventListener('click', () => { 
-    currentAngle -= anglePerCard; 
+    const isAnyCardActive = document.querySelector('.card.active');
+    if(isAnyCardActive) return; 
+
+    currentAngle -= anglePerCard;
+    updateCarousel(); 
   });
   
   prevBtn.addEventListener('click', () => { 
+    const isAnyCardActive = document.querySelector('.card.active');
+    if(isAnyCardActive) return;
+
     currentAngle += anglePerCard; 
+    updateCarousel();
   });
 
   carousel.addEventListener('mouseenter', () => { isHovered = true; });
@@ -56,75 +64,76 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.open-chat-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.stopPropagation(); 
       const card = btn.closest('.card');
       const infoView = card.querySelector('.info-view');
       const chatView = card.querySelector('.chat-view');
 
       if (infoView && chatView) {
         infoView.style.display = 'none';
-        chatView.style.display = 'flex';
+        chatView.style.display = 'flex'; // Flex болгож харагдуулна
       }
     });
   });
-
   document.querySelectorAll('.back-to-info-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.stopPropagation();
       const card = btn.closest('.card');
       const infoView = card.querySelector('.info-view');
       const chatView = card.querySelector('.chat-view');
 
       if (infoView && chatView) {
         chatView.style.display = 'none';
-        infoView.style.display = 'flex';
+        infoView.style.display = 'flex'; 
       }
     });
   });
-
   function sendMessage(card) {
     const input = card.querySelector('.input-area input');
     const messagesContainer = card.querySelector('.messages');
     const text = input.value.trim();
     
     if (!text) return;
-
     const userMsg = document.createElement('div');
     userMsg.className = 'msg user';
     userMsg.textContent = text;
     messagesContainer.appendChild(userMsg);
     
     input.value = '';
-    
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    scrollToBottom(messagesContainer);
 
     setTimeout(() => {
         const aiMsg = document.createElement('div');
         aiMsg.className = 'msg ai';
-        aiMsg.textContent = "ご質問ありがとうございます。少々お待ちください..."; 
+        const responses = [
+            "ただいま確認中です。まもなくお返事します。", 
+            
+            "お問い合わせありがとうございます。少々お待ちください。", 
+
+            "メッセージを受け取りました。後ほど詳しく回答いたします。", 
+        ];
+        const randomResp = responses[Math.floor(Math.random() * responses.length)];
+        
+        aiMsg.textContent = randomResp;
         messagesContainer.appendChild(aiMsg);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+        scrollToBottom(messagesContainer);
     }, 1000);
   }
 
+  function scrollToBottom(container) {
+      container.scrollTop = container.scrollHeight;
+  }
   document.querySelectorAll('.send-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.stopPropagation();
       const card = btn.closest('.card');
       sendMessage(card);
     });
   });
-
   document.querySelectorAll('.input-area input').forEach(input => {
     input.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         const card = input.closest('.card');
         sendMessage(card);
       }
-    });
-    
-    input.addEventListener('click', (e) => {
-        e.stopPropagation();
     });
   });
 });
